@@ -1,0 +1,277 @@
+{
+    "languages": ["key", "en", "cn", "jp"],          // 第一项一定会被当作 key-translation
+    "translation": [
+      {
+        "key": "app_title",
+        "en":  "Sample Size Calculation Tool",
+        "cn":  "样本量计算工具",
+        "jp":  "サンプルサイズ計算ツール"
+      },
+      {
+        "key": "btn_calc",
+        "en":  "Calculate Sample Size",
+        "cn":  "计算样本量",
+        "jp":  "サンプルサイズ計算"
+      },
+      {
+        "key": "lang_en",  "en": "English",   "cn": "英文", "jp": "英語"
+      },
+      {
+        "key": "lang_cn",  "en": "Chinese",   "cn": "中文", "jp": "中国語"
+      },
+      {
+        "key": "lang_jp",  "en": "Japanese",  "cn": "日语", "jp": "日本語"
+      },
+      {
+        "key": "tab_home",
+        "en" : "Home",
+        "cn" : "首页",
+        "jp" : "ホーム"
+      },
+      {
+        "key": "tab_guidance",
+        "en" : "Guidance",
+        "cn" : "向导",
+        "jp" : "ガイダンス"
+      },
+      {
+        "key": "tab_ttest",  "en": "T-test",  "cn": "T检验",  "jp": "t検定"
+      },
+      {
+        "key": "tab_anova",  "en": "ANOVA",   "cn": "方差分析", "jp": "分散分析"
+      },
+      {
+        "key": "about_welcome_h2",
+        "en": "Welcome to Sample Size Calculation Tool",
+        "cn": "欢迎使用样本量计算工具",
+        "jp": "サンプルサイズ計算ツールへようこそ"
+      },
+      {
+        "key": "about_intro_p1",
+        "en": "This tool is designed to assist researchers in calculating appropriate sample sizes for various study designs.",
+        "cn": "本工具旨在帮助研究人员为多种研究设计计算合适的样本量。",
+        "jp": "本ツールは、さまざまな研究デザインにおいて適切なサンプルサイズを算出するために研究者を支援することを目的としています。"
+      },
+      {
+        "key": "about_intro_p2",
+        "en": "If you encounter any issues or need guidance, please refer to the Q&A section below or contact us directly.",
+        "cn": "如果您遇到问题或需要帮助，请参考下方 Q&A，或直接联系我们。",
+        "jp": "ご不明点や操作方法については、ページ下部の Q&A をご覧いただくか、直接お問い合わせください。"
+      },
+      {
+        "key": "about_faq_h3",
+        "en": "Frequently Asked Questions",
+        "cn": "常见问题解答",
+        "jp": "よくある質問"
+      },
+      {
+        "key": "faq_q1",
+        "en": "Q: What kind of study designs does this tool support?",
+        "cn": "问：本工具支持哪些研究设计？",
+        "jp": "Q：このツールはどのような研究デザインに対応していますか？"
+      },
+      {
+        "key": "faq_a1",
+        "en": "A: It supports T-tests, ANOVA, Proportion tests, Survival analysis, and more.",
+        "cn": "答：支持 T 检验、方差分析、比例检验、生存分析等多种统计方法。",
+        "jp": "A：t検定、分散分析（ANOVA）、比率の検定、生存時間解析など、さまざまな統計手法に対応しています。"
+      },
+      {
+        "key": "faq_q2",
+        "en": "Q: Can I export the results?",
+        "cn": "问：结果可以导出吗？",
+        "jp": "Q：結果をエクスポートできますか？"
+      },
+      {
+        "key": "faq_a2",
+        "en": "A: Yes, all output tables and plots can be downloaded in PDF or PNG format.",
+        "cn": "答：可以，所有输出表格和图形都可下载为 PDF 或 PNG 格式。",
+        "jp": "A：はい、すべての出力表やグラフは PDF または PNG 形式でダウンロードできます。"
+      },
+      {
+        "key": "faq_q3",
+        "en": "Q: Who do I contact for technical support?",
+        "cn": "问：技术支持请联系谁？",
+        "jp": "Q：技術的なサポートはどこに問い合わせればよいですか？"
+      },
+      {
+        "key": "faq_a3",
+        "en": "A: Use the contact form below or email us at luopeng@163.com / davidyt@i.smu.edu.cn.",
+        "cn": "答：请使用下方联系表，或发送邮件至 luopeng@163.com / davidyt@i.smu.edu.cn。",
+        "jp": "A：下記の問い合わせフォームをご利用いただくか、luopeng@163.com / davidyt@i.smu.edu.cn までメールでご連絡ください。"
+      },
+      {
+        "key": "contact_email_label",
+        "en": "Your Email:",
+        "cn": "您的邮箱：",
+        "jp": "メールアドレス:"
+      },
+      {
+        "key": "contact_email_ph",
+        "en": "e.g. you@example.com",
+        "cn": "例如：you@example.com",
+        "jp": "例：you@example.com"
+      },
+      {
+        "key": "contact_msg_label",
+        "en": "Your Message:",
+        "cn": "您的留言：",
+        "jp": "メッセージ:"
+      },
+      {
+        "key": "contact_msg_ph",
+        "en": "Write your feedback or question here...",
+        "cn": "请在此填写您的反馈或问题…",
+        "jp": "ご意見・ご質問をこちらにご記入ください..."
+      },
+      {
+        "key": "btn_submit",
+        "en": "Submit",
+        "cn": "提交",
+        "jp": "送信"
+      },
+
+
+      {
+        "key": "sidebar_home_h4",             "en": "Home", 
+        "cn": "主页",      "jp": "ホーム"
+      },
+      {
+        "key": "sidebar_home_p1",             
+        "en": "Welcome to the Sample Size Calculation Tool (Demo Version). This page gives you an overview of the app's capabilities and updates.",
+        "cn": "欢迎使用样本量计算工具（演示版）。此页面概述了应用的功能和更新。",
+        "jp": "サンプルサイズ計算ツール（デモ版）へようこそ。このページではアプリの機能と更新内容の概要を紹介します。"
+      },
+      {
+        "key": "sidebar_home_p2",             
+        "en": "Key functions currently implemented include:",
+        "cn": "目前已实现的主要功能包括：",
+        "jp": "現在実装されている主な機能："
+      },
+      {
+        "key": "sidebar_home_p3",             
+        "en": "You can switch language, view update history, and contact us.",
+        "cn": "您可以切换语言、查看更新历史并与我们联系。",
+        "jp": "言語を切り替え、更新履歴を確認し、私たちに連絡することができます。"
+      },
+      {
+        "key": "sidebar_home_p4",             
+        "en": "For help, visit the 'About and Help' tab.",
+        "cn": "如需帮助，请访问“关于和帮助”标签页。",
+        "jp": "ヘルプが必要な場合は「About and Help」タブをご覧ください。"
+      },
+
+
+
+      {
+        "key": "home_intro_p1",
+        "en": "Welcome to our app! This platform provides a simple and intuitive interface for data analysis. Designed with user experience in mind, it offers robust functionality without requiring any coding background.",
+        "cn": "欢迎使用我们的应用！该平台为数据分析提供简单直观的界面。它以用户体验为核心设计，无需任何编程基础即可提供强大的功能。",
+        "jp": "当アプリへようこそ！このプラットフォームはデータ解析をシンプルかつ直感的に行えるインターフェースを提供します。ユーザー体験を重視して設計され、コーディングの知識がなくても強力な機能を活用できます。"
+      },
+    
+      /*——— 00 Home – Panel headings ———*/
+      {
+        "key": "home_maintainers_h4",
+        "en": "Application Maintainers",
+        "cn": "应用维护者",
+        "jp": "アプリ保守担当"
+      },
+      {
+        "key": "home_updates_h4",
+        "en": "Software Updates / News",
+        "cn": "软件更新 / 新闻",
+        "jp": "ソフトウェア更新 / お知らせ"
+      },
+    
+      /*——— 00 Home – Maintainer lines ———*/
+      {
+        "key": "home_maintainer_peng",
+        "en": "Peng Luo: luopeng@smu.edu.cn",
+        "cn": "罗鹏：luopeng@smu.edu.cn",
+        "jp": "Peng Luo: luopeng@smu.edu.cn"
+      },
+      {
+        "key": "home_maintainer_dai",
+        "en": "Weiyuntian Dai: davidyt@i.smu.edu.cn",
+        "cn": "戴魏云天：davidyt@i.smu.edu.cn",
+        "jp": "Weiyuntian Dai: davidyt@i.smu.edu.cn"
+      },
+    
+      /*——— 00 Home – 更新日志条目 ———*/
+      {
+        "key": "home_update_20250327",
+        "en": "Update 2025-03-27: Upload Demo Version.",
+        "cn": "更新 2025-03-27：上传演示版本。",
+        "jp": "更新 2025-03-27：デモ版をアップロード。"
+      },
+      {
+        "key": "home_update_20250306",
+        "en": "Update 2025-03-06: New theme!",
+        "cn": "更新 2025-03-06：全新主题！",
+        "jp": "更新 2025-03-06：新しいテーマ！"
+      },
+      {
+        "key": "home_update_20250203",
+        "en": "Update 2025-02-03: Hello World!",
+        "cn": "更新 2025-02-03：Hello World！",
+        "jp": "更新 2025-02-03：Hello World！"
+      },
+      {
+        "key": "home_update_more",
+        "en": "...more updates here.",
+        "cn": "……更多更新，敬请期待。",
+        "jp": "…さらなる更新情報はこちら。"
+      },
+
+
+
+
+
+
+
+      
+      {
+        "key": "sidebar_guidance_h4",         "en": "Guidance", 
+        "cn": "向导",       "jp": "ガイダンス"
+      },
+      {
+        "key": "sidebar_guidance_p1",         
+        "en": "This page helps users identify the correct sample size module by selecting their data type and study design.",
+        "cn": "本页通过选择数据类型和研究设计，帮助用户定位合适的样本量模块。",
+        "jp": "このページでは、データ型と研究デザインを選択して適切なサンプルサイズ計算モジュールを案内します。"
+      },
+      {
+        "key": "sidebar_guidance_p2",         
+        "en": "Usage: Choose your data type and study design using the radio buttons, then click 'Recommend!' to see the suggested module.",
+        "cn": "使用方法：通过单选按钮选择数据类型和研究设计，点击“推荐！”即可查看建议模块。",
+        "jp": "使い方：ラジオボタンでデータ型と研究デザインを選択し、「Recommend!」をクリックすると推奨モジュールが表示されます。"
+      },
+      {
+        "key": "sidebar_guidance_p3",         
+        "en": "If needed, click 'Go to Recommended Tab' to jump directly.",
+        "cn": "如有需要，点击“跳转到推荐标签”可直接进入目标页面。",
+        "jp": "必要に応じて「Go to Recommended Tab」をクリックすると直接そのタブへ移動します。"
+      },
+      {
+        "key": "sidebar_guidance_p4",         
+        "en": "Need assistance? Visit the 'About and Help' tab.",
+        "cn": "需要帮助？请前往“关于和帮助”标签页。",
+        "jp": "サポートが必要な場合は「About and Help」タブをご覧ください。"
+      }
+      
+
+      
+
+
+
+
+
+      
+      
+      
+
+    ]
+  }
+  
+  
