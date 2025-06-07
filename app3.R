@@ -276,9 +276,9 @@ ui <- fluidPage(
                    )
                  ),
                    
-                 br(),
-                 br(),
-                 br(),
+          br(),
+          br(),
+          br()
                  br()
           ),
 
@@ -292,40 +292,48 @@ tabPanel(title = i18n$t("tab_guidance"),
          tabsetPanel(
            id = "guidance_subtabs",
            tabPanel(
-             title  = "引导问卷",
+             title  = i18n$t("wizard_questionnaire_tab"),
              value  = "wizard",
          fluidRow(
            # 左侧：分步骤问题
            column(4,
                   ## Step 1: 选择试验设计类型
                   div(id = "step1",
-                      h4("步骤1：您的试验设计是？"),
-                      radioButtons("step1_design", label=NULL, inline=FALSE,
-                                   choices = c("单组设计（单臂研究）" = "single",
-                                               "两组设计（平行对照）" = "two",
-                                               "多组设计（≥3组对照）" = "multi",
-                                               "特殊设计（配对/交叉）" = "special")
+                     h4(i18n$t("wizard_step1_title")),
+                      radioButtons(
+                        "step1_design",
+                        label = NULL,
+                        inline = FALSE,
+                        choices = setNames(
+                          c("single", "two", "multi", "special"),
+                          c(
+                            i18n$t("wizard_step1_single"),
+                            i18n$t("wizard_step1_two"),
+                            i18n$t("wizard_step1_multi"),
+                            i18n$t("wizard_step1_special")
+                          )
+                        )
                       ),
-                      actionButton("step1_next", "Next →", class = "btn btn-primary")
+                      actionButton("step1_next", i18n$t("wizard_next"), class = "btn btn-primary")
                   ),
                   
                   ## Step 2: 根据 Step1 动态呈现的研究目标问题
                   hidden(div(id = "step2",
                              # 文本和选项由服务器根据 step1_design 动态生成
                              uiOutput("step2_ui"),
-                             actionButton("step2_next", "Next →", class = "btn btn-primary")
+                             actionButton("step2_next", i18n$t("wizard_next"), class = "btn btn-primary")
                   )),
                   
                   ## Step 3: 根据前一步动态呈现的数据类型问题
                   hidden(div(id = "step3",
                              uiOutput("step3_ui"),
-                             actionButton("step3_next", "Next →", class = "btn btn-primary")
+                             actionButton("step3_next", i18n$t("wizard_next"), class = "btn btn-primary")
                   )),
                   
                   ## Step 4: 若需要，呈现附加问题（如生存分析细节）
                   hidden(div(id = "step4",
                              uiOutput("step4_ui"),
-                             actionButton("step4_finish", "Finish", class = "btn btn-success")
+                             actionButton("step4_finish", i18n$t("wizard_finish"), class = "btn btn-success")
                   ))
            ),
            
@@ -333,23 +341,23 @@ tabPanel(title = i18n$t("tab_guidance"),
            column(8,
                   tags$div(id="explanation_panel", 
                            style = "border: 1px solid #ddd; padding: 15px; background: #f9f9f9; border-radius: 5px;",
-                           h4("📝 实时说明"),
+                           h4(i18n$t("wizard_panel_explanation")),
                            # 动态输出各步骤选择的解释文本
                            uiOutput("explanation_text")
                   ),
                   # 最终推荐结果区域（初始隐藏）
                   hidden(div(id = "result_panel",
-                             h3("🧠 推荐方法"),
+                             h3(i18n$t("wizard_panel_recommend")),
                              htmlOutput("final_recommendation"),   # 最终推荐的方法与说明
                              br(),
-                             actionButton("go_back_restart", "重新开始", icon = icon("redo")),
-                             actionButton("wizard_go_to_tab", "跳转到计算模块 →", class = "btn btn-success")
+                             actionButton("go_back_restart", i18n$t("wizard_restart"), icon = icon("redo")),
+                             actionButton("wizard_go_to_tab", i18n$t("wizard_go_to_tab"), class = "btn btn-success")
                   ))
            )
          )
            ),
          tabPanel(
-           title  = "指导文档",
+           title  = i18n$t("wizard_doc_tab"),
            value  = "guide_doc",
            # MathJax 自动生效；若想保险可再包一层 withMathJax()
            div(style = "padding:0 20px;",
@@ -378,7 +386,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      numericInput(
                                        inputId = "t1_alpha",
                                        label   = span(
-                                         "Significance Level (alpha)",
+                                         i18n$t("label_significance"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -396,7 +404,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      numericInput(
                                        inputId = "t1_power",
                                        label   = span(
-                                         "Statistical Power (1 - β)",
+                                         i18n$t("label_power"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -414,7 +422,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      numericInput(
                                        inputId = "t1_delta",
                                        label   = span(
-                                         "Mean Difference from Null",
+                                         i18n$t("label_mean_diff"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -430,7 +438,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      numericInput(
                                        inputId = "t1_sd",
                                        label   = span(
-                                         "Estimated Standard Deviation",
+                                         i18n$t("label_sd"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -446,7 +454,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      selectInput(
                                        inputId = "t1_alternative",
                                        label   = span(
-                                         "Alternative Hypothesis",
+                                         i18n$t("label_alt_hypothesis"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -461,7 +469,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      selectInput(
                                        inputId = "t1_x_variable",
                                        label   = span(
-                                         "Select X Variable for Power Curve",
+                                         i18n$t("label_select_x"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -476,7 +484,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      br(),
                                      actionBttn(
                                        inputId = "t1_calc",
-                                       label = "Calculate Sample Size",
+                                       label = i18n$t("btn_calc"),
                                        style = "gradient",
                                        color = "primary"
                                      ),
@@ -486,7 +494,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      verbatimTextOutput("t1_result"),
                                      tags$div(
                                        style = "border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f9f9f9;",
-                                       h4("Power Curve", style = "margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif;"),
+                                       h4(i18n$t("title_power_curve"), style = "margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif;"),
                                        plotOutput(outputId = "t1_power_curve", height = "400px") # Output plot here
                                      )
                               )
@@ -570,7 +578,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      br(),
                                      actionBttn(
                                        inputId = "paired_calc",
-                                       label = "Calculate Sample Size",
+                                       label = i18n$t("btn_calc"),
                                        style = "gradient",
                                        color = "primary"
                                      )
@@ -665,7 +673,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      br(),
                                      actionBttn(
                                        inputId = "ind_two_calc",
-                                       label = "Calculate Sample Size",
+                                       label = i18n$t("btn_calc"),
                                        style = "gradient",
                                        color = "primary"
                                      )
@@ -1159,10 +1167,10 @@ tabPanel(title = i18n$t("tab_guidance"),
                                        color = "primary"
                                      )
                               ),
-                              column(8,
-                                     verbatimTextOutput("prop_paired_result"),
-                                     
-                              )
+                               column(8,
+                                      verbatimTextOutput("prop_paired_result")
+
+                               )
                             )
                    ),
                    ##===-===-===-===-===-===-===
@@ -2369,9 +2377,9 @@ tabPanel(title ="About&Help",value = "About&Help",
                class = "btn-primary")
            )
          ),
-         br(),
-         br(),
-         br(),
+          br(),
+          br(),
+          br()
 )
 
 
@@ -2617,7 +2625,7 @@ server <- function(input, output, session) {
       if (input$step1_design == "two") {
         # 两组设计 -> 研究目标四选一
         tagList(
-          h4("步骤2：您的研究目标是？"),
+          h4(i18n$t("wizard_step2_title")),
           radioButtons("step2_objective", label=NULL,
                        choices = c("检验A组与B组的差异" = "difference",
                                    "证明A组优于B组（优效性）" = "superiority",
@@ -2628,7 +2636,7 @@ server <- function(input, output, session) {
       } else if (input$step1_design == "single") {
         # 单组设计 -> 研究目标单一（验证是否达到目标值）
         tagList(
-          h4("步骤2：您的研究目标是？"),
+          h4(i18n$t("wizard_step2_title")),
           radioButtons("step2_objective", label=NULL,
                        choices = c("验证结果是否达到预期目标值" = "single_target")
           )
@@ -2636,7 +2644,7 @@ server <- function(input, output, session) {
       } else if (input$step1_design == "multi") {
         # 多组设计 -> 研究目标单一（整体差异检验）
         tagList(
-          h4("步骤2：您的研究目标是？"),
+          h4(i18n$t("wizard_step2_title")),
           radioButtons("step2_objective", label=NULL,
                        choices = c("比较所有组整体是否存在差异" = "overall")
           )
@@ -2644,7 +2652,7 @@ server <- function(input, output, session) {
       } else if (input$step1_design == "special") {
         # 特殊设计 -> 研究目标表示具体设计类型（二选一）
         tagList(
-          h4("步骤2：您的研究类型属于？"),
+          h4(i18n$t("wizard_step2_title")),
           radioButtons("step2_objective", label=NULL,
                        choices = c("配对设计（同一对象前后测量对比）" = "paired",
                                    "交叉设计（两组交换治疗顺序）" = "crossover")
@@ -2660,7 +2668,7 @@ server <- function(input, output, session) {
     req(input$step2_objective)  # 确保已回答 Step2
     # 动态生成 Step 3 问题 UI
     output$step3_ui <- renderUI({
-      h4("步骤3：您测量的数据是？")
+      h4(i18n$t("wizard_step3_title"))
       # 根据前面的设计和目标确定数据类型选项
       # 两组设计提供三类选项，其它设计提供二类选项
       if (input$step1_design == "two") {
@@ -2687,7 +2695,7 @@ server <- function(input, output, session) {
       # 生存分析细节问题
       output$step4_ui <- renderUI({
         tagList(
-          h4("步骤4：生存分析的类型？"),
+          h4(i18n$t("wizard_step4_title")),
           radioButtons("step4_detail", label=NULL,
                        choices = c("标准生存曲线比较（对数秩检验）" = "logrank",
                                    "成组序贯设计（允许中期分析）" = "groupseq",

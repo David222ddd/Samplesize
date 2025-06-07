@@ -254,10 +254,148 @@
         "jp": "必要に応じて「Go to Recommended Tab」をクリックすると直接そのタブへ移動します。"
       },
       {
-        "key": "sidebar_guidance_p4",         
+        "key": "sidebar_guidance_p4",
         "en": "Need assistance? Visit the 'About and Help' tab.",
         "cn": "需要帮助？请前往“关于和帮助”标签页。",
         "jp": "サポートが必要な場合は「About and Help」タブをご覧ください。"
+      },
+      {
+        "key": "wizard_step1_title",
+        "en": "Step 1: What is your study design?",
+        "cn": "步骤1：您的试验设计是？",
+        "jp": "ステップ1：研究デザインは？"
+      },
+      {
+        "key": "wizard_step1_single",
+        "en": "Single group (single-arm study)",
+        "cn": "单组设计（单臂研究）",
+        "jp": "単群デザイン（単群研究）"
+      },
+      {
+        "key": "wizard_step1_two",
+        "en": "Two groups (parallel control)",
+        "cn": "两组设计（平行对照）",
+        "jp": "2群デザイン（並行対照）"
+      },
+      {
+        "key": "wizard_step1_multi",
+        "en": "Multiple groups (≥3 groups)",
+        "cn": "多组设计（≥3组对照）",
+        "jp": "多群デザイン（3群以上）"
+      },
+      {
+        "key": "wizard_step1_special",
+        "en": "Special design (paired/crossover)",
+        "cn": "特殊设计（配对/交叉）",
+        "jp": "特殊デザイン（ペア・クロスオーバー）"
+      },
+      {
+        "key": "wizard_next",
+        "en": "Next →",
+        "cn": "下一步 →",
+        "jp": "次へ →"
+      },
+      {
+        "key": "wizard_step2_title",
+        "en": "Step 2: What is your study objective?",
+        "cn": "步骤2：您的研究目标是？",
+        "jp": "ステップ2：研究目的は？"
+      },
+      {
+        "key": "wizard_step3_title",
+        "en": "Step 3: What type of data do you collect?",
+        "cn": "步骤3：您测量的数据是？",
+        "jp": "ステップ3：どのようなデータを収集しますか？"
+      },
+      {
+        "key": "wizard_step4_title",
+        "en": "Step 4: Type of survival analysis?",
+        "cn": "步骤4：生存分析的类型？",
+        "jp": "ステップ4：生存解析のタイプは？"
+      },
+      {
+        "key": "wizard_finish",
+        "en": "Finish",
+        "cn": "完成",
+        "jp": "完了"
+      },
+      {
+        "key": "wizard_restart",
+        "en": "Restart",
+        "cn": "重新开始",
+        "jp": "再スタート"
+      },
+      {
+        "key": "wizard_go_to_tab",
+        "en": "Go to Calculation Module →",
+        "cn": "跳转到计算模块 →",
+        "jp": "計算モジュールへ移動 →"
+      },
+      {
+        "key": "wizard_doc_tab",
+        "en": "Guidance Document",
+        "cn": "指导文档",
+        "jp": "ガイダンス文書"
+      },
+      {
+        "key": "wizard_questionnaire_tab",
+        "en": "Wizard",
+        "cn": "引导问卷",
+        "jp": "ウィザード"
+      },
+      {
+        "key": "wizard_panel_explanation",
+        "en": "📝 Real-time Explanation",
+        "cn": "📝 实时说明",
+        "jp": "📝 リアルタイム説明"
+      },
+      {
+        "key": "wizard_panel_recommend",
+        "en": "🧠 Recommended Method",
+        "cn": "🧠 推荐方法",
+        "jp": "🧠 推奨方法"
+      },
+      {
+        "key": "label_significance",
+        "en": "Significance Level (alpha)",
+        "cn": "显著性水平 (α)",
+        "jp": "有意水準 (α)"
+      },
+      {
+        "key": "label_power",
+        "en": "Statistical Power (1 - β)",
+        "cn": "统计功效 (1 - β)",
+        "jp": "検出力 (1 - β)"
+      },
+      {
+        "key": "label_mean_diff",
+        "en": "Mean Difference from Null",
+        "cn": "与零假设均值的差异",
+        "jp": "帰無仮説平均からの差"
+      },
+      {
+        "key": "label_sd",
+        "en": "Estimated Standard Deviation",
+        "cn": "标准差估计值",
+        "jp": "推定標準偏差"
+      },
+      {
+        "key": "label_alt_hypothesis",
+        "en": "Alternative Hypothesis",
+        "cn": "备择假设",
+        "jp": "対立仮説"
+      },
+      {
+        "key": "label_select_x",
+        "en": "Select X Variable for Power Curve",
+        "cn": "选择功效曲线的横坐标变量",
+        "jp": "パワーカーブの横軸変数を選択"
+      },
+      {
+        "key": "title_power_curve",
+        "en": "Power Curve",
+        "cn": "功效曲线",
+        "jp": "パワーカーブ"
       }
       
 
