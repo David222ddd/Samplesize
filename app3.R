@@ -1467,40 +1467,40 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
 ####-###-###-###-###-###-###-###-###
 # 5. 流行病学研究类----
 ####-###-###-###-###-###-###-###-###
-        tabPanel("Epidemiological Studies",
+        tabPanel(i18n$t("tab_epi"),
                  tabsetPanel(
                    ##===-===-===-===-===-===-===
                    ## 5.1 Case-Control (epiR) - UI----
                    ##===-===-===-===-===-===-===
-                   tabPanel("Case-Control (epiR)",
+                   tabPanel(i18n$t("epi_casecontrol_tab"),
                             fluidRow(
                               column(4,
                                      numericInput("epir_cc_alpha", span(
-                                       "Significance Level (α)",
+                                       i18n$t("epi_label_alpha"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Probability of Type I error. Common value is 0.05 for 95% confidence.'); return false;")
                                      ), value = 0.05, min = 0.0001, max = 0.5, step = 0.01),
                                      
                                      numericInput("epir_cc_power", span(
-                                       "Power (1 - β)",
+                                       i18n$t("epi_label_power"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Desired power to detect a true odds ratio difference between groups.'); return false;")
                                      ), value = 0.80, min = 0, max = 1, step = 0.01),
                                      
                                      numericInput("epir_cc_or", span(
-                                       "Odds Ratio (OR)",
+                                       i18n$t("epi_label_or"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Assumed odds ratio of exposure between cases and controls. OR > 1 means higher odds in exposed.'); return false;")
                                      ), value = 2, min = 1.01, max = 100, step = 0.1),
                                      
                                      numericInput("epir_cc_p0", span(
-                                       "Exposure in Controls (p0)",
+                                       i18n$t("epi_label_p0"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Proportion of controls expected to have the exposure.'); return false;")
                                      ), value = 0.3, min = 0, max = 1, step = 0.01),
                                      
                                      numericInput("epir_cc_r", span(
-                                       "Case:Control ratio",
+                                       i18n$t("epi_label_r"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Ratio of the number of cases to the number of controls. Often 1.'); return false;")
                                      ), value = 1, min = 0.01, max = 10, step = 0.1),
@@ -1508,7 +1508,7 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                                      
                                      actionBttn(
                                        inputId = "epir_cc_calc",
-                                       label   = "Calculate",
+                                       label   = i18n$t("btn_calc"),
                                        style   = "gradient",
                                        color   = "primary"
                                      )
@@ -1522,7 +1522,7 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
             border-radius:5px; 
             background:#f9f9f9; 
             margin-top:14px;",
-                                       h4("Power Curves"),
+                                       h4(i18n$t("ttest_power_curves")),
                                        plotOutput("epir_cc_power_plot", height="400px")
                                      )
                               )
@@ -1533,35 +1533,35 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                    ##===-===-===-===-===-===-===
                    ## 5.2 Cohort (RR) (epiR) - UI----
                    ##===-===-===-===-===-===-===
-                   tabPanel("Cohort (RR) (epiR)",
+                   tabPanel(i18n$t("epi_cohort_rr_tab"),
                             fluidRow(
                               column(4,
                                      numericInput("epir_cohort_rr_alpha", span(
-                                       "Significance Level (α)",
+                                       i18n$t("epi_label_alpha"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Probability of Type I error. Typical value is 0.05.'); return false;")
                                      ), value = 0.05, min = 0.0001, max = 0.5, step = 0.01),
                                      
                                      numericInput("epir_cohort_rr_power", span(
-                                       "Power (1 - β)",
+                                       i18n$t("epi_label_power"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Desired power to detect a difference in risk between exposed and non-exposed groups.'); return false;")
                                      ), value = 0.80, min = 0, max = 1, step = 0.01),
                                      
                                      numericInput("epir_cohort_rr_p0", span(
-                                       "Baseline Risk (p0)",
+                                       i18n$t("epi_label_rr_p0"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected incidence in the non-exposed group.'); return false;")
                                      ), value = 0.1, min = 0, max = 1, step = 0.01),
                                      
                                      numericInput("epir_cohort_rr_val", span(
-                                       "Relative Risk (RR)",
+                                       i18n$t("epi_label_rr_val"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Assumed relative risk (incidence in exposed / incidence in non-exposed).'); return false;")
                                      ), value = 2, min = 1.01, max = 10, step = 0.1),
                                      
                                      numericInput("epir_cohort_rr_ratio", span(
-                                       "Exposed : NonExp ratio",
+                                       i18n$t("epi_label_ratio"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Sample size ratio of exposed to non-exposed individuals.'); return false;")
                                      ), value = 1, min = 0.01, max = 10, step = 0.1),
@@ -1569,7 +1569,7 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                                      
                                      actionBttn(
                                        inputId = "epir_cohort_rr_calc",
-                                       label   = "Calculate",
+                                       label   = i18n$t("btn_calc"),
                                        style   = "gradient",
                                        color   = "primary"
                                      )
@@ -1583,7 +1583,7 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
             border-radius:5px; 
             background:#f9f9f9; 
             margin-top:14px;",
-                                       h4("Power Curves"),
+                                       h4(i18n$t("ttest_power_curves")),
                                        plotOutput("epir_cohort_rr_plot", height="400px")
                                      )
                               )
@@ -1594,35 +1594,35 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                    ##===-===-===-===-===-===-===
                    ## 5.3 Cohort (p1, p2) (epiR) - UI----
                    ##===-===-===-===-===-===-===
-                   tabPanel("Cohort (p1,p2) (epiR)",
+                   tabPanel(i18n$t("epi_cohort_p1p2_tab"),
                             fluidRow(
                               column(4,
                                      numericInput("epir_cohort_p1p2_alpha", span(
-                                       "Significance Level (α)",
+                                       i18n$t("epi_label_alpha"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Probability of Type I error. Default is 0.05.'); return false;")
                                      ), value = 0.05, min = 0.0001, max = 0.5, step = 0.01),
                                      
                                      numericInput("epir_cohort_p1p2_power", span(
-                                       "Power (1 - β)",
+                                       i18n$t("epi_label_power"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Desired power to detect a difference in incidence between groups.'); return false;")
                                      ), value = 0.80, min = 0, max = 1, step = 0.01),
                                      
                                      numericInput("epir_cohort_p1p2_p1", span(
-                                       "Incidence Risk in Exposed Group (P1)",
+                                       i18n$t("epi_label_p1"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected risk (incidence proportion) in the exposed group.'); return false;")
                                      ), value = 0.2, min = 0, max = 1, step = 0.01),
                                      
                                      numericInput("epir_cohort_p1p2_p2", span(
-                                       "Incidence Risk in Non-Exposed Group (P2)",
+                                       i18n$t("epi_label_p2"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected risk (incidence proportion) in the non-exposed group.'); return false;")
                                      ), value = 0.1, min = 0, max = 1, step = 0.01),
                                      
                                      numericInput("epir_cohort_p1p2_ratio", span(
-                                       "Exposed : NonExp ratio",
+                                       i18n$t("epi_label_ratio"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Sample size ratio of exposed to non-exposed individuals.'); return false;")
                                      ), value = 1, min = 0.01, max = 10, step = 0.1),
@@ -1630,7 +1630,7 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                                      
                                      actionBttn(
                                        inputId = "epir_cohort_p1p2_calc",
-                                       label   = "Calculate",
+                                       label   = i18n$t("btn_calc"),
                                        style   = "gradient",
                                        color   = "primary"
                                      )
@@ -1644,7 +1644,7 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
             border-radius:5px; 
             background:#f9f9f9; 
             margin-top:14px;",
-                                       h4("Power Curves"),
+                                       h4(i18n$t("ttest_power_curves")),
                                        plotOutput("epir_cohort_p1p2_plot", height="400px")
                                      )
                               )
@@ -2450,7 +2450,7 @@ server <- function(input, output, session) {
           tags$li(i18n$t("tab_prop")),
           tags$li(i18n$t("tab_corr")),
           tags$li("ANOVA - Two-Factor ANOVA"),
-          tags$li("Epidemiological Studies"),
+          tags$li(i18n$t("tab_epi")),
           tags$li("Non-Inferiority"),
           tags$li("Equivalence"),
           tags$li("Superiority"),
@@ -2500,10 +2500,10 @@ server <- function(input, output, session) {
       )
     } else if (input$myInnerTabs == "Epidemiological Studies") {
       tagList(
-        h4("Epidemiological Studies"),
-        tags$p("This section supports sample size calculations for case-control and cohort studies using odds ratios or relative risks."),
-        tags$p("Usage: Provide alpha, power, expected effect sizes (e.g., OR or RR), baseline risks, and group ratios. Click to calculate."),
-        tags$p("More details are available in the 'About & Help' section.")
+        h4(i18n$t("sidebar_epi_h4")),
+        tags$p(i18n$t("sidebar_epi_p1")),
+        tags$p(i18n$t("sidebar_epi_p2")),
+        tags$p(i18n$t("sidebar_epi_p3"))
       )
     } else if (input$myInnerTabs == "Non-Inferiority") {
       tagList(
