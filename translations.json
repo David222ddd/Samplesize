@@ -1061,8 +1061,216 @@
   "en": "More details are available in the 'About & Help' section.",
   "cn": "更多详情请参见“关于和帮助”部分。",
   "jp": "詳細は「About & Help」セクションをご覧ください。"
+ },
+ {
+   "key": "tab_ni",
+   "en": "Non-Inferiority",
+   "cn": "非劣效",
+   "jp": "非劣性"
+ },
+ {
+   "key": "tab_equiv",
+   "en": "Equivalence",
+   "cn": "等效",
+   "jp": "等価性"
+ },
+ {
+   "key": "tab_sup",
+   "en": "Superiority",
+   "cn": "优效性",
+   "jp": "優越性"
+ },
+ {
+   "key": "tab_means_diff",
+   "en": "Two Means (Difference)",
+   "cn": "两均值差",
+   "jp": "2平均差"
+ },
+ {
+   "key": "tab_prop_diff",
+   "en": "Two Proportions (Difference)",
+   "cn": "两比例差",
+   "jp": "2比率差"
+ },
+ {
+   "key": "tab_prop_ratio",
+   "en": "Two Proportions (Ratio)",
+   "cn": "两比例比",
+   "jp": "2比率比"
+ },
+ {
+   "key": "sidebar_ni_h4",
+   "en": "Non-Inferiority",
+   "cn": "非劣效",
+   "jp": "非劣性"
+ },
+ {
+   "key": "sidebar_ni_p1",
+   "en": "This module supports sample size estimation for non-inferiority trials (mean or proportion differences or ratios).",
+   "cn": "该模块用于估算非劣效试验的样本量（均值或比例差或比值）。",
+   "jp": "このモジュールでは平均または比率の差・比を用いた非劣性試験のサンプルサイズを算出します。"
+ },
+ {
+   "key": "sidebar_ni_p2",
+   "en": "Usage: Set significance level, power, non-inferiority margin, effect estimates, and allocation ratio. Click 'Calculate'.",
+   "cn": "使用方法：设置显著性水平、功效、非劣效界值、效应估计以及分配比例后点击“计算”。",
+   "jp": "有意水準、検出力、非劣性マージン、効果量、割付比を設定し「計算」をクリックします。"
+ },
+ {
+   "key": "sidebar_ni_p3",
+   "en": "Need help? Go to 'About & Help'.",
+   "cn": "如需帮助，请前往“关于和帮助”。",
+   "jp": "ヘルプが必要な場合は「About & Help」をご覧ください。"
+ },
+ {
+   "key": "sidebar_eq_h4",
+   "en": "Equivalence",
+   "cn": "等效",
+   "jp": "等価性"
+ },
+ {
+   "key": "sidebar_eq_p1",
+   "en": "Estimate sample size for equivalence studies using mean differences or proportion comparisons.",
+   "cn": "本模块基于均值差或比例比较估计等效研究样本量。",
+   "jp": "平均差や比率比較を用いた等価性研究のサンプルサイズを推定します。"
+ },
+ {
+   "key": "sidebar_eq_p2",
+   "en": "Usage: Input alpha, power, equivalence margin, and effect size, then click 'Calculate'.",
+   "cn": "使用方法：输入 alpha、功效、等效界值和效应大小，然后点击“计算”。",
+   "jp": "α、検出力、等価マージン、効果量を入力して「計算」をクリックしてください。"
+ },
+ {
+   "key": "sidebar_eq_p3",
+   "en": "Visit 'About & Help' for guidance.",
+   "cn": "更多指导请参见“关于和帮助”。",
+   "jp": "詳しくは「About & Help」を参照してください。"
+ },
+ {
+   "key": "sidebar_sup_h4",
+   "en": "Superiority",
+   "cn": "优效性",
+   "jp": "優越性"
+ },
+ {
+   "key": "sidebar_sup_p1",
+   "en": "Used to calculate sample size for superiority trials (difference or ratio between two means or proportions).",
+   "cn": "用于计算优效性试验样本量（两组均值或比例差异/比值）。",
+   "jp": "2群の平均・比率の差または比を用いた優越性試験のサンプルサイズを算出します。"
+ },
+ {
+   "key": "sidebar_sup_p2",
+   "en": "Usage: Fill in values for alpha, power, effect size, and group ratio. Then click 'Calculate'.",
+   "cn": "使用方法：填写 alpha、功效、效应大小及组间比例后点击“计算”。",
+   "jp": "α、検出力、効果量、群比を入力し「計算」をクリックします。"
+ },
+ {
+   "key": "sidebar_sup_p3",
+   "en": "Need help? Check the 'About & Help' tab.",
+   "cn": "需要帮助？查看“关于和帮助”标签。",
+   "jp": "ヘルプは「About & Help」タブをご確認ください。"
+ },
+ {
+   "key": "ni_label_alpha",
+   "en": "Significance Level α (One side):",
+   "cn": "显著性水平 α（单侧）：",
+   "jp": "有意水準 α（片側）:"
+ },
+ {
+   "key": "ni_label_sigma",
+   "en": "Pooled Std Dev (σ):",
+   "cn": "合并标准差 (σ)：",
+   "jp": "プールド標準偏差 (σ):"
+ },
+ {
+   "key": "ni_label_margin",
+   "en": "NI Margin (delta):",
+   "cn": "非劣效界值 (δ)：",
+   "jp": "非劣性マージン (δ):"
+ },
+ {
+   "key": "ni_label_true_diff",
+   "en": "True difference (μ2 - μ1):",
+   "cn": "真实差异 (μ2 - μ1)：",
+   "jp": "真の差 (μ2 - μ1):"
+ },
+ {
+   "key": "ni_label_p1",
+   "en": "p1 (Treatment):",
+   "cn": "p1 (实验组)：",
+   "jp": "p1 (治療群):"
+ },
+ {
+   "key": "ni_label_p2",
+   "en": "p2 (Control):",
+   "cn": "p2 (对照组)：",
+   "jp": "p2 (対照群):"
+ },
+ {
+   "key": "ni_label_margin_rr",
+   "en": "NI Margin (RR Upper):",
+   "cn": "非劣效界值 (风险比上限)：",
+   "jp": "非劣性マージン (RR上限):"
+ },
+ {
+   "key": "eq_label_margin",
+   "en": "Equiv. Margin (delta):",
+   "cn": "等效界值 (δ)：",
+   "jp": "等価マージン (δ):"
+ },
+ {
+   "key": "eq_label_true_diff",
+   "en": "True mean diff (μ2 - μ1):",
+   "cn": "真实均值差 (μ2 - μ1)：",
+   "jp": "真の平均差 (μ2 - μ1):"
+ },
+ {
+   "key": "eq_label_p1",
+   "en": "p1 (Test):",
+   "cn": "p1 (试验组)：",
+   "jp": "p1 (試験群):"
+ },
+ {
+   "key": "eq_label_p2",
+   "en": "p2 (Control):",
+   "cn": "p2 (对照组)：",
+   "jp": "p2 (対照群):"
+ },
+ {
+   "key": "eq_label_noninf_sup_margin",
+   "en": "Non-inf/sup margin:",
+   "cn": "非劣/优效界值：",
+   "jp": "非劣／優越マージン:"
+ },
+ {
+   "key": "eq_label_pt",
+   "en": "pt (Test):",
+   "cn": "pt (试验组)：",
+   "jp": "pt (試験群):"
+ },
+ {
+   "key": "eq_label_pc",
+   "en": "pc (Control):",
+   "cn": "pc (对照组)：",
+   "jp": "pc (対照群):"
+ },
+ {
+   "key": "eq_label_margin_ratio",
+   "en": "Equiv. Margin:",
+   "cn": "等效界值：",
+   "jp": "等価マージン:"
+ },
+ {
+   "key": "sup_label_mean_diff",
+   "en": "Expected Mean Difference (Δ):",
+   "cn": "期望均值差 (Δ)：",
+   "jp": "期待平均差 (Δ):"
+ },
+ {
+   "key": "common_label_alloc",
+   "en": "Allocation ratio (n1/n2):",
+   "cn": "样本量比 (n1/n2)：",
+   "jp": "割付比 (n1/n2):"
+ }
+]
 }
-    ]
-  }
-  
-  
