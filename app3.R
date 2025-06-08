@@ -40,13 +40,14 @@ ui <- fluidPage(
     selectInput(
       inputId  = "lang_top",
       label    = NULL,                   # 不显示 label，保持简洁
-      choices  = c("中文" = "cn",
-                   "English" = "en",
-                   "日本語" = "jp"),
+      choices  = c("中文 🇨🇳" = "cn",
+                   "English 🇬🇧" = "en",
+                   "日本語 🇯🇵" = "jp"),
       selected = "en",                   # 先给个默认值；后面 server 会同步
       width    = "100%"
     )
   ),
+  
   
   
   theme = shinytheme("flatly"),  # 主题
@@ -137,11 +138,21 @@ ui <- fluidPage(
       color: #ffffff;             /* 字体用白色 */
       padding: 15px;
       margin-bottom: 15px;
+      display: flex;              /* 与 logo 同行显示 */
+      align-items: center;        /* 垂直居中 */
     ",
+    tags$a(
+      href = "#shiny-tab-Home",
+      tags$img(
+        src = "logo.png",
+        height = "80px",
+        style = "margin-right: 10px;"
+      )
+    ),
     h2(
-     # "Sample Size Calculation Tool", 
       i18n$t("app_title"),
-      style = "margin: 0;")
+      style = "margin: 0;"
+    )
   ),
   
 
@@ -371,14 +382,14 @@ tabPanel(title = i18n$t("tab_guidance"),
                    ##===-===-===-===-===-===-===
                    ## 1.1 One-Sample t-Test----
                    ##===-===-===-===-===-===-===
-                   tabPanel("One-Sample t-Test",
+                   tabPanel(i18n$t("ttest_one_title"),
                             fluidRow(
                               column(4,
                                      # alpha
                                      numericInput(
                                        inputId = "t1_alpha",
                                        label   = span(
-                                         "Significance Level (alpha)",
+                                         i18n$t("ttest_label_alpha"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -396,7 +407,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      numericInput(
                                        inputId = "t1_power",
                                        label   = span(
-                                         "Statistical Power (1 - β)",
+                                         i18n$t("ttest_label_power"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -414,7 +425,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      numericInput(
                                        inputId = "t1_delta",
                                        label   = span(
-                                         "Mean Difference from Null",
+                                         i18n$t("ttest_label_delta"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -430,7 +441,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      numericInput(
                                        inputId = "t1_sd",
                                        label   = span(
-                                         "Estimated Standard Deviation",
+                                         i18n$t("ttest_label_sd"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -446,7 +457,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      selectInput(
                                        inputId = "t1_alternative",
                                        label   = span(
-                                         "Alternative Hypothesis",
+                                         i18n$t("ttest_label_alternative"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -461,7 +472,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      selectInput(
                                        inputId = "t1_x_variable",
                                        label   = span(
-                                         "Select X Variable for Power Curve",
+                                         i18n$t("ttest_label_x_variable"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -476,7 +487,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      br(),
                                      actionBttn(
                                        inputId = "t1_calc",
-                                       label = "Calculate Sample Size",
+                                       label = i18n$t("btn_calc"),
                                        style = "gradient",
                                        color = "primary"
                                      ),
@@ -486,7 +497,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      verbatimTextOutput("t1_result"),
                                      tags$div(
                                        style = "border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f9f9f9;",
-                                       h4("Power Curve", style = "margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif;"),
+                                       h4(i18n$t("ttest_power_curve"), style = "margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif;"),
                                        plotOutput(outputId = "t1_power_curve", height = "400px") # Output plot here
                                      )
                               )
@@ -496,14 +507,14 @@ tabPanel(title = i18n$t("tab_guidance"),
                    ##===-===-===-===-===-===-===
                    ## 1.2 Paired t-Test----
                    ##===-===-===-===-===-===-===
-                   tabPanel("Paired t-Test",
+                   tabPanel(i18n$t("ttest_paired_title"),
                             fluidRow(
                               column(4,
                                      # alpha
                                      numericInput(
                                        inputId = "paired_alpha",
                                        label   = span(
-                                         "Significance Level (alpha)",
+                                         i18n$t("ttest_label_alpha"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -521,7 +532,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      numericInput(
                                        inputId = "paired_power",
                                        label   = span(
-                                         "Statistical Power (1 - β)",
+                                         i18n$t("ttest_label_power"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -539,7 +550,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      numericInput(
                                        inputId = "paired_d",
                                        label   = span(
-                                         "Effect Size (Cohen's d)",
+                                         i18n$t("ttest_label_effect_size"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -555,7 +566,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      selectInput(
                                        inputId = "paired_alternative",
                                        label   = span(
-                                         "Alternative Hypothesis",
+                                         i18n$t("ttest_label_alternative"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -570,7 +581,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      br(),
                                      actionBttn(
                                        inputId = "paired_calc",
-                                       label = "Calculate Sample Size",
+                                       label = i18n$t("btn_calc"),
                                        style = "gradient",
                                        color = "primary"
                                      )
@@ -581,7 +592,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      # 用来显示两张拼贴的图
                                      tags$div(
                                        style = "border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f9f9f9; margin-top:14px;",
-                                       h4("Power Curves", style = "margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif;"),
+                                       h4(i18n$t("ttest_power_curves"), style = "margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif;"),
                                        plotOutput("paired_power_curves", height = "400px")  
                                      )
                               )
@@ -591,14 +602,14 @@ tabPanel(title = i18n$t("tab_guidance"),
                    ##===-===-===-===-===-===-===
                    ## 1.3 Two-Independent-Sample t-Test----
                    ##===-===-===-===-===-===-===
-                   tabPanel("Two-Independent-Sample t-Test",
+                   tabPanel(i18n$t("ttest_two_title"),
                             fluidRow(
                               column(4,
                                      # alpha
                                      numericInput(
                                        inputId = "ind_two_alpha",
                                        label   = span(
-                                         "Significance Level (alpha)",
+                                         i18n$t("ttest_label_alpha"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -616,7 +627,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      numericInput(
                                        inputId = "ind_two_power",
                                        label   = span(
-                                         "Statistical Power (1 - β)",
+                                         i18n$t("ttest_label_power"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -634,7 +645,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      numericInput(
                                        inputId = "ind_two_d",
                                        label   = span(
-                                         "Effect Size (Cohen's d)",
+                                         i18n$t("ttest_label_effect_size"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -650,7 +661,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      selectInput(
                                        inputId = "ind_two_alternative",
                                        label   = span(
-                                         "Alternative Hypothesis",
+                                         i18n$t("ttest_label_alternative"),
                                          style = "font-family: Arial, Helvetica, sans-serif;",
                                          tags$a(
                                            tags$i(class='fa fa-question-circle'),
@@ -665,7 +676,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      br(),
                                      actionBttn(
                                        inputId = "ind_two_calc",
-                                       label = "Calculate Sample Size",
+                                       label = i18n$t("btn_calc"),
                                        style = "gradient",
                                        color = "primary"
                                      )
@@ -674,7 +685,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      verbatimTextOutput("ind_two_result"),
                                      tags$div(
                                        style = "border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f9f9f9; margin-top:14px;",
-                                       h4("Power Curves", style = "margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif;"),
+                                       h4(i18n$t("ttest_power_curves"), style = "margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif;"),
                                        plotOutput("ind_two_power_curves", height = "400px")
                                      )
                               )
@@ -693,16 +704,16 @@ tabPanel(title = i18n$t("tab_guidance"),
                    ##===-===-===-===-===-===-===
                    ## 2.1 Two-Period Crossover----
                    ##===-===-===-===-===-===-===
-                   tabPanel("Two-Period Crossover",
+                   tabPanel(i18n$t("anova_crossover_tab"),
                             fluidRow(
                               column(
                                 width = 4,
-                                h3("Two-Period Crossover (2×2)"),
+                                h3(i18n$t("anova_crossover_title")),
                                 
                                 numericInput(
                                   inputId = "crossover_alpha",
                                   label = span(
-                                    "Significance Level (alpha)",
+                                    i18n$t("anova_label_alpha"),
                                     style = "font-family: Arial, Helvetica, sans-serif; margin-right: 5px;",
                                     tags$a(
                                       tags$i(class = "fa fa-question-circle"),
@@ -717,7 +728,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 numericInput(
                                   inputId = "crossover_power",
                                   label = span(
-                                    "Target Power",
+                                    i18n$t("anova_label_power"),
                                     style = "font-family: Arial, Helvetica, sans-serif; margin-right: 5px;",
                                     tags$a(
                                       tags$i(class = "fa fa-question-circle"),
@@ -732,7 +743,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 numericInput(
                                   inputId = "crossover_cv",
                                   label = span(
-                                    "Coefficient of Variation (CV)",
+                                    i18n$t("anova_label_cv"),
                                     style = "font-family: Arial, Helvetica, sans-serif; margin-right: 5px;",
                                     tags$a(
                                       tags$i(class = "fa fa-question-circle"),
@@ -747,7 +758,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 numericInput(
                                   inputId = "crossover_ratio",
                                   label = span(
-                                    "θ0 (True Ratio)",
+                                    i18n$t("anova_label_ratio"),
                                     style = "font-family: Arial, Helvetica, sans-serif; margin-right: 5px;",
                                     tags$a(
                                       tags$i(class = "fa fa-question-circle"),
@@ -761,7 +772,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 
                                 actionButton(
                                   inputId = "crossover_calc",
-                                  label   = "Calculate"
+                                  label   = i18n$t("btn_calc")
                                 )
                               ),
                               column(
@@ -769,7 +780,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 verbatimTextOutput("crossover_result"),
                                 tags$div(
                                   style = "border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f9f9f9;",
-                                  h4("Power Curve", style = "margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif;"),
+                                  h4(i18n$t("anova_power_curve"), style = "margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif;"),
                                   plotOutput(outputId = "crossover_power_curves", height = "400px") # Output plot here
                                 )
                                 
@@ -779,17 +790,17 @@ tabPanel(title = i18n$t("tab_guidance"),
                    ##===-===-===-===-===-===-===
                    ## 2.2 One-Way ANOVA----
                    ##===-===-===-===-===-===-===
-                   tabPanel("One-Way ANOVA",
+                   tabPanel(i18n$t("anova_oneway_tab"),
                             
                             fluidRow(
                               column(
                                 width = 4,
-                                h3("One-Way ANOVA"),
+                                h3(i18n$t("anova_oneway_title")),
                                 
                                 numericInput(
                                   inputId = "anova1_alpha",
                                   label = span(
-                                    "Significance Level (alpha)",
+                                    i18n$t("anova_label_alpha"),
                                     style = "font-family: Arial, Helvetica, sans-serif; margin-right: 5px;",
                                     tags$a(
                                       tags$i(class = "fa fa-question-circle"),
@@ -804,7 +815,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 numericInput(
                                   inputId = "anova1_power",
                                   label = span(
-                                    "Target Power",
+                                    i18n$t("anova_label_power"),
                                     style = "font-family: Arial, Helvetica, sans-serif; margin-right: 5px;",
                                     tags$a(
                                       tags$i(class = "fa fa-question-circle"),
@@ -819,7 +830,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 numericInput(
                                   inputId = "anova1_f",
                                   label = span(
-                                    "Cohen's f",
+                                    i18n$t("anova_label_f"),
                                     style = "font-family: Arial, Helvetica, sans-serif; margin-right: 5px;",
                                     tags$a(
                                       tags$i(class = "fa fa-question-circle"),
@@ -834,7 +845,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 numericInput(
                                   inputId = "anova1_k",
                                   label = span(
-                                    "Number of Groups (k)",
+                                    i18n$t("anova_label_groups"),
                                     style = "font-family: Arial, Helvetica, sans-serif; margin-right: 5px;",
                                     tags$a(
                                       tags$i(class = "fa fa-question-circle"),
@@ -849,7 +860,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 
                                 actionButton(
                                   inputId = "anova1_calc",
-                                  label   = "Calculate"
+                                  label   = i18n$t("btn_calc")
                                 )
                               ),
                               column(
@@ -857,7 +868,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 verbatimTextOutput("anova1_result"),
                                 tags$div(
                                   style = "border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f9f9f9;",
-                                  h4("Power Curve", style = "margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif;"),
+                                  h4(i18n$t("anova_power_curve"), style = "margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif;"),
                                   plotOutput(outputId = "anova1_power_curves", height = "400px") # Output plot here
                                 )
                               )
@@ -867,15 +878,15 @@ tabPanel(title = i18n$t("tab_guidance"),
                    ##===-===-===-===-===-===-===
                    ## 2.3 Two-Factor ANOVA----
                    ##===-===-===-===-===-===-===
-                   tabPanel("Two-Factor ANOVA",
+                   tabPanel(i18n$t("anova_twofactor_tab"),
                             
                             fluidRow(
                               column(
                                 width = 4,
-                                h3("Two-Factor ANOVA"),
+                                h3(i18n$t("anova_twofactor_title")),
                                 
                                 numericInput("a", span(
-                                  "Number of Levels for Factor A (a)",
+                                  i18n$t("anova_label_levels_a"),
                                   tags$a(
                                     tags$i(class = "fa fa-question-circle"),
                                     href = "#",
@@ -884,7 +895,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 ), 2, min = 2, step = 1),
                                 
                                 numericInput("b", span(
-                                  "Number of Levels for Factor B (b)",
+                                  i18n$t("anova_label_levels_b"),
                                   tags$a(
                                     tags$i(class = "fa fa-question-circle"),
                                     href = "#",
@@ -893,7 +904,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 ), 3, min = 2, step = 1),
                                 
                                 numericInput("alpha", span(
-                                  "Significance Level (alpha)",
+                                  i18n$t("anova_label_alpha"),
                                   tags$a(
                                     tags$i(class = "fa fa-question-circle"),
                                     href = "#",
@@ -902,7 +913,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 ), 0.05, step = 0.01),
                                 
                                 numericInput("fA", span(
-                                  "Effect Size for Factor A (f.A)",
+                                  i18n$t("anova_label_fA"),
                                   tags$a(
                                     tags$i(class = "fa fa-question-circle"),
                                     href = "#",
@@ -911,7 +922,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 ), 0.25, step = 0.01),
                                 
                                 numericInput("fB", span(
-                                  "Effect Size for Factor B (f.B)",
+                                  i18n$t("anova_label_fB"),
                                   tags$a(
                                     tags$i(class = "fa fa-question-circle"),
                                     href = "#",
@@ -921,7 +932,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 
                                 
                                 numericInput("target_power", span(
-                                  "Target Power",
+                                  i18n$t("anova_label_power"),
                                   tags$a(
                                     tags$i(class = "fa fa-question-circle"),
                                     href = "#",
@@ -929,7 +940,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                   )
                                 ), 0.80, step = 0.01),
                                 
-                                actionButton("calc_power", "Calculate")
+                                actionButton("calc_power", i18n$t("btn_calc"))
                               ),
                               column(
                                 width = 8,
@@ -942,15 +953,15 @@ tabPanel(title = i18n$t("tab_guidance"),
                    ##===-===-===-===-===-===-===
                    ## 2.4 Repeated-Measures ANOVA----
                    ##===-===-===-===-===-===-===
-                   tabPanel("Repeated-Measures ANOVA",
+                   tabPanel(i18n$t("anova_repeated_tab"),
                           
                             fluidRow(
                               column(
                                 width = 4,
-                                h3("Repeated-Measures ANOVA"),
+                                h3(i18n$t("anova_repeated_title")),
                                 
                                 numericInput("arOneRho", span(
-                                  "AR(1) Correlation Coefficient (rho)",
+                                  i18n$t("anova_label_arone_rho"),
                                   tags$a(
                                     tags$i(class = "fa fa-question-circle"),
                                     href = "#",
@@ -959,7 +970,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 ), value = 0.76, step = 0.01),
                                 
                                 numericInput("arOneSD", span(
-                                  "Standard Deviation per Measurement (σ)",
+                                  i18n$t("anova_label_arone_sd"),
                                   tags$a(
                                     tags$i(class = "fa fa-question-circle"),
                                     href = "#",
@@ -968,7 +979,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 ), value = 25, step = 1),
                                 
                                 numericInput("arOneT", span(
-                                  "Number of Repeated Measurements (T)",
+                                  i18n$t("anova_label_arone_T"),
                                   tags$a(
                                     tags$i(class = "fa fa-question-circle"),
                                     href = "#",
@@ -977,7 +988,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 ), value = 6, min = 2, step = 1),
                                 
                                 numericInput("arOneDelta", span(
-                                  "Mean Difference Between Groups (Δ)",
+                                  i18n$t("anova_label_arone_delta"),
                                   tags$a(
                                     tags$i(class = "fa fa-question-circle"),
                                     href = "#",
@@ -986,7 +997,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 ), value = 14.3, step = 0.1),
                                 
                                 numericInput("arOneAlpha", span(
-                                  "Significance Level (alpha)",
+                                  i18n$t("anova_label_arone_alpha"),
                                   tags$a(
                                     tags$i(class = "fa fa-question-circle"),
                                     href = "#",
@@ -995,7 +1006,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 ), value = 0.05, step = 0.01),
                                 
                                 numericInput("arOnePower", span(
-                                  "Target Power",
+                                  i18n$t("anova_label_arone_power"),
                                   tags$a(
                                     tags$i(class = "fa fa-question-circle"),
                                     href = "#",
@@ -1005,7 +1016,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                 
                                 
                                 
-                                actionButton("calcArOneBtn", "Calculate")
+                                actionButton("calcArOneBtn", i18n$t("btn_calc"))
                                 
                               ),
                               column(
@@ -2461,17 +2472,17 @@ server <- function(input, output, session) {
       )
     } else if (input$myInnerTabs == "T-test") {
       tagList(
-        h4("T-test"),
-        tags$p("This section calculates sample size for One-Sample, Paired-Sample, and Two-Independent-Sample t-tests."),
-        tags$p("Usage: Fill in values like alpha, power, effect size or standard deviation, and choose alternative hypothesis. Click 'Calculate Sample Size'. Power curves will be displayed."),
-        tags$p("Need help? See 'About & Help' tab.")
+        h4(i18n$t("sidebar_ttest_h4")),
+        tags$p(i18n$t("sidebar_ttest_p1")),
+        tags$p(i18n$t("sidebar_ttest_p2")),
+        tags$p(i18n$t("sidebar_ttest_p3"))
       )
     } else if (input$myInnerTabs == "ANOVA") {
       tagList(
-        h4("ANOVA"),
-        tags$p("This page provides tools for calculating sample size for various ANOVA designs: One-Way, Two-Factor, Repeated Measures, and Two-Period Crossover."),
-        tags$p("Usage: Input required statistical parameters such as alpha, power, effect size (Cohen’s f), number of groups, etc. Click 'Calculate' to compute."),
-        tags$p("For questions, go to 'About & Help'.")
+        h4(i18n$t("sidebar_anova_h4")),
+        tags$p(i18n$t("sidebar_anova_p1")),
+        tags$p(i18n$t("sidebar_anova_p2")),
+        tags$p(i18n$t("sidebar_anova_p3"))
       )
     } else if (input$myInnerTabs == "Proportion Tests") {
       tagList(

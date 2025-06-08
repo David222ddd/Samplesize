@@ -14,13 +14,13 @@
         "jp":  "サンプルサイズ計算"
       },
       {
-        "key": "lang_en",  "en": "English",   "cn": "英文", "jp": "英語"
+        "key": "lang_en",  "en": "English",   "cn": "English", "jp": "English"
       },
       {
-        "key": "lang_cn",  "en": "Chinese",   "cn": "中文", "jp": "中国語"
+        "key": "lang_cn",  "en": "中文",   "cn": "中文", "jp": "中文"
       },
       {
-        "key": "lang_jp",  "en": "Japanese",  "cn": "日语", "jp": "日本語"
+        "key": "lang_jp",  "en": "日本語",  "cn": "日本語", "jp": "日本語"
       },
       {
         "key": "tab_home",
@@ -258,6 +258,292 @@
         "en": "Need assistance? Visit the 'About and Help' tab.",
         "cn": "需要帮助？请前往“关于和帮助”标签页。",
         "jp": "サポートが必要な場合は「About and Help」タブをご覧ください。"
+      },
+
+      {
+        "key": "sidebar_ttest_h4",
+        "en": "T-test",
+        "cn": "T检验",
+        "jp": "t検定"
+      },
+      {
+        "key": "sidebar_ttest_p1",
+        "en": "This section calculates sample size for One-Sample, Paired-Sample, and Two-Independent-Sample t-tests.",
+        "cn": "本部分用于计算单样本、配对样本以及双独立样本 t 检验的样本量。",
+        "jp": "このセクションでは、1標本、対応のある2標本、独立2標本のt検定のサンプルサイズを計算します。"
+      },
+      {
+        "key": "sidebar_ttest_p2",
+        "en": "Usage: Fill in values like alpha, power, effect size or standard deviation, and choose alternative hypothesis. Click 'Calculate Sample Size'. Power curves will be displayed.",
+        "cn": "使用方法：填写 alpha、power、效应量或标准差等值，并选择备择假设，点击“计算样本量”后可查看功效曲线。",
+        "jp": "使用方法: αや検出力、効果量または標準偏差などを入力し、対立仮説を選択して「サンプルサイズ計算」をクリックします。パワーカーブが表示されます。"
+      },
+      {
+        "key": "sidebar_ttest_p3",
+        "en": "Need help? See 'About & Help' tab.",
+        "cn": "需要帮助？请查看“关于和帮助”标签。",
+        "jp": "ヘルプが必要な場合は「About & Help」タブをご覧ください。"
+      },
+      {
+        "key": "ttest_one_title",
+        "en": "One-Sample t-Test",
+        "cn": "单样本 t 检验",
+        "jp": "1標本t検定"
+      },
+      {
+        "key": "ttest_paired_title",
+        "en": "Paired t-Test",
+        "cn": "配对 t 检验",
+        "jp": "対応のあるt検定"
+      },
+      {
+        "key": "ttest_two_title",
+        "en": "Two-Independent-Sample t-Test",
+        "cn": "两独立样本 t 检验",
+        "jp": "独立2標本t検定"
+      },
+      {
+        "key": "ttest_label_alpha",
+        "en": "Significance Level (alpha)",
+        "cn": "显著性水平 (alpha)",
+        "jp": "有意水準 (α)"
+      },
+      {
+        "key": "ttest_label_power",
+        "en": "Statistical Power (1 - β)",
+        "cn": "检验功效 (1 - β)",
+        "jp": "検出力 (1 - β)"
+      },
+      {
+        "key": "ttest_label_delta",
+        "en": "Mean Difference from Null",
+        "cn": "与零假设均值的差值",
+        "jp": "帰無仮説平均からの差"
+      },
+      {
+        "key": "ttest_label_sd",
+        "en": "Estimated Standard Deviation",
+        "cn": "标准差估计",
+        "jp": "標準偏差の推定値"
+      },
+      {
+        "key": "ttest_label_effect_size",
+        "en": "Effect Size (Cohen's d)",
+        "cn": "效应量 (Cohen's d)",
+        "jp": "効果量 (Cohen's d)"
+      },
+      {
+        "key": "ttest_label_alternative",
+        "en": "Alternative Hypothesis",
+        "cn": "备择假设",
+        "jp": "対立仮説"
+      },
+      {
+        "key": "ttest_label_x_variable",
+        "en": "Select X Variable for Power Curve",
+        "cn": "选择功效曲线的横坐标",
+        "jp": "パワーカーブのX軸を選択"
+      },
+      {
+        "key": "ttest_power_curve",
+        "en": "Power Curve",
+        "cn": "功效曲线",
+        "jp": "パワーカーブ"
+      },
+      {
+        "key": "ttest_power_curves",
+        "en": "Power Curves",
+        "cn": "功效曲线",
+        "jp": "パワーカーブ"
+      },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      {
+        "key": "sidebar_anova_h4",
+        "en": "ANOVA",
+        "cn": "方差分析",
+        "jp": "分散分析"
+      },
+      {
+        "key": "sidebar_anova_p1",
+        "en": "This page provides tools for calculating sample size for various ANOVA designs: One-Way, Two-Factor, Repeated Measures, and Two-Period Crossover.",
+        "cn": "本页提供用于计算不同 ANOVA 设计样本量的工具，包括单因素、双因素、重复测量和双周期交叉设计。",
+        "jp": "このページでは、一元配置、二元配置、反復測定、2期間クロスオーバーなど各種 ANOVA 設計のサンプルサイズ計算を行います。"
+      },
+      {
+        "key": "sidebar_anova_p2",
+        "en": "Usage: Input required statistical parameters such as alpha, power, effect size (Cohen’s f), number of groups, etc. Click 'Calculate' to compute.",
+        "cn": "使用方法：输入 alpha、power、效应量 (Cohen 的 f)、组数等参数，点击“计算”即可得到结果。",
+        "jp": "使い方: α、検出力、効果量(Cohen\u2019s f)、群数などの値を入力し、\"計算\"をクリックしてください。"
+      },
+      {
+        "key": "sidebar_anova_p3",
+        "en": "For questions, go to 'About & Help'.",
+        "cn": "如有疑问，请参阅“关于和帮助”部分。",
+        "jp": "ご不明な点は\"About & Help\"タブをご覧ください。"
+      },
+      {
+        "key": "anova_crossover_tab",
+        "en": "Two-Period Crossover",
+        "cn": "两周期交叉设计",
+        "jp": "2期間クロスオーバー"
+      },
+      {
+        "key": "anova_crossover_title",
+        "en": "Two-Period Crossover (2×2)",
+        "cn": "两周期交叉 (2×2)",
+        "jp": "2期間クロスオーバー (2×2)"
+      },
+      {
+        "key": "anova_label_alpha",
+        "en": "Significance Level (alpha)",
+        "cn": "显著性水平 (alpha)",
+        "jp": "有意水準 (α)"
+      },
+      {
+        "key": "anova_label_power",
+        "en": "Target Power",
+        "cn": "目标功效",
+        "jp": "目標検出力"
+      },
+      {
+        "key": "anova_label_cv",
+        "en": "Coefficient of Variation (CV)",
+        "cn": "变异系数 (CV)",
+        "jp": "変動係数 (CV)"
+      },
+      {
+        "key": "anova_label_ratio",
+        "en": "θ0 (True Ratio)",
+        "cn": "θ0 (真实比值)",
+        "jp": "θ0 (真の比)"
+      },
+      {
+        "key": "anova_oneway_tab",
+        "en": "One-Way ANOVA",
+        "cn": "单因素 ANOVA",
+        "jp": "一元配置分散分析"
+      },
+      {
+        "key": "anova_oneway_title",
+        "en": "One-Way ANOVA",
+        "cn": "单因素 ANOVA",
+        "jp": "一元配置分散分析"
+      },
+      {
+        "key": "anova_label_f",
+        "en": "Cohen's f",
+        "cn": "Cohen 的 f",
+        "jp": "Cohen の f"
+      },
+      {
+        "key": "anova_label_groups",
+        "en": "Number of Groups (k)",
+        "cn": "组数 (k)",
+        "jp": "群数 (k)"
+      },
+      {
+        "key": "anova_twofactor_tab",
+        "en": "Two-Factor ANOVA",
+        "cn": "双因素 ANOVA",
+        "jp": "二元配置分散分析"
+      },
+      {
+        "key": "anova_twofactor_title",
+        "en": "Two-Factor ANOVA",
+        "cn": "双因素 ANOVA",
+        "jp": "二元配置分散分析"
+      },
+      {
+        "key": "anova_label_levels_a",
+        "en": "Number of Levels for Factor A (a)",
+        "cn": "因素 A 的水平数 (a)",
+        "jp": "要因Aの水準数 (a)"
+      },
+      {
+        "key": "anova_label_levels_b",
+        "en": "Number of Levels for Factor B (b)",
+        "cn": "因素 B 的水平数 (b)",
+        "jp": "要因Bの水準数 (b)"
+      },
+      {
+        "key": "anova_label_fA",
+        "en": "Effect Size for Factor A (f.A)",
+        "cn": "因素 A 的效应量 (f.A)",
+        "jp": "要因Aの効果量 (f.A)"
+      },
+      {
+        "key": "anova_label_fB",
+        "en": "Effect Size for Factor B (f.B)",
+        "cn": "因素 B 的效应量 (f.B)",
+        "jp": "要因Bの効果量 (f.B)"
+      },
+      {
+        "key": "anova_repeated_tab",
+        "en": "Repeated-Measures ANOVA",
+        "cn": "重复测量 ANOVA",
+        "jp": "反復測定分散分析"
+      },
+      {
+        "key": "anova_repeated_title",
+        "en": "Repeated-Measures ANOVA",
+        "cn": "重复测量 ANOVA",
+        "jp": "反復測定分散分析"
+      },
+      {
+        "key": "anova_label_arone_rho",
+        "en": "AR(1) Correlation Coefficient (rho)",
+        "cn": "AR(1) 相关系数 (rho)",
+        "jp": "AR(1)相関係数 (rho)"
+      },
+      {
+        "key": "anova_label_arone_sd",
+        "en": "Standard Deviation per Measurement (σ)",
+        "cn": "每次测量的标准差 (σ)",
+        "jp": "各測定の標準偏差 (σ)"
+      },
+      {
+        "key": "anova_label_arone_T",
+        "en": "Number of Repeated Measurements (T)",
+        "cn": "重复测量次数 (T)",
+        "jp": "繰り返し測定回数 (T)"
+      },
+      {
+        "key": "anova_label_arone_delta",
+        "en": "Mean Difference Between Groups (Δ)",
+        "cn": "组间平均差 (Δ)",
+        "jp": "群間平均差 (Δ)"
+      },
+      {
+        "key": "anova_label_arone_alpha",
+        "en": "Significance Level (alpha)",
+        "cn": "显著性水平 (alpha)",
+        "jp": "有意水準 (α)"
+      },
+      {
+        "key": "anova_label_arone_power",
+        "en": "Target Power",
+        "cn": "目标功效",
+        "jp": "目標検出力"
+      },
+      {
+        "key": "anova_power_curve",
+        "en": "Power Curve",
+        "cn": "功效曲线",
+        "jp": "パワーカーブ"
       }
 
 
