@@ -370,7 +370,7 @@
 
 
 
-      
+
       {
         "key": "sidebar_anova_h4",
         "en": "ANOVA",
@@ -544,7 +544,402 @@
         "en": "Power Curve",
         "cn": "功效曲线",
         "jp": "パワーカーブ"
+      },
+
+
+
+
+      {
+        "key": "tab_prop",
+        "en": "Proportion Tests",
+        "cn": "比例检验",
+        "jp": "比率検定"
+      },
+      {
+        "key": "prop_one_title",
+        "en": "One-Sample Proportion Test",
+        "cn": "单样本比例检验",
+        "jp": "1標本比率検定"
+      },
+      {
+        "key": "prop_paired_title",
+        "en": "Paired Proportion Comparison",
+        "cn": "配对比例比较",
+        "jp": "対応比率比較"
+      },
+      {
+        "key": "prop_two_title",
+        "en": "Two-Independent Proportions Comparison",
+        "cn": "两独立样本比例比较",
+        "jp": "独立2群比率比較"
+      },
+      {
+        "key": "prop_multi_title",
+        "en": "Multiple Proportions (Completely Randomized)",
+        "cn": "多组比例比较（完全随机）",
+        "jp": "多群比率比較（完全無作為）"
+      },
+      {
+        "key": "prop_label_alpha",
+        "en": "Significance Level (alpha)",
+        "cn": "显著性水平 (alpha)",
+        "jp": "有意水準 (α)"
+      },
+      {
+        "key": "prop_label_power",
+        "en": "Statistical Power (1 - β)",
+        "cn": "检验功效 (1 - β)",
+        "jp": "検出力 (1 - β)"
+      },
+      {
+        "key": "prop_label_p0",
+        "en": "Null Hypothesis Proportion (p0)",
+        "cn": "零假设比例 (p0)",
+        "jp": "帰無仮説比率 (p0)"
+      },
+      {
+        "key": "prop_label_p1",
+        "en": "Alternative Proportion (p1)",
+        "cn": "备择假设比例 (p1)",
+        "jp": "対立仮説比率 (p1)"
+      },
+      {
+        "key": "prop_label_alt",
+        "en": "Alternative Hypothesis",
+        "cn": "备择假设",
+        "jp": "対立仮説"
+      },
+      {
+        "key": "prop_label_paired_p1",
+        "en": "Proportion 1 (Approx.)",
+        "cn": "比例1（近似）",
+        "jp": "比率1（近似）"
+      },
+      {
+        "key": "prop_label_paired_p2",
+        "en": "Proportion 2 (Approx.)",
+        "cn": "比例2（近似）",
+        "jp": "比率2（近似）"
+      },
+      {
+        "key": "prop_label_two_p1",
+        "en": "Proportion 1 (p1)",
+        "cn": "比例1 (p1)",
+        "jp": "比率1 (p1)"
+      },
+      {
+        "key": "prop_label_two_p2",
+        "en": "Proportion 2 (p2)",
+        "cn": "比例2 (p2)",
+        "jp": "比率2 (p2)"
+      },
+      {
+        "key": "prop_label_multi_grp1",
+        "en": "Group1 proportion",
+        "cn": "组1比例",
+        "jp": "群1比率"
+      },
+      {
+        "key": "prop_label_multi_grp2",
+        "en": "Group2 proportion",
+        "cn": "组2比例",
+        "jp": "群2比率"
+      },
+      {
+        "key": "prop_label_multi_grp3",
+        "en": "Group3 proportion",
+        "cn": "组3比例",
+        "jp": "群3比率"
+      },
+      {
+        "key": "prop_power_curves",
+        "en": "Power Curves",
+        "cn": "功效曲线",
+        "jp": "パワーカーブ"
+      },
+      {
+        "key": "sidebar_prop_h4",
+        "en": "Proportion Tests",
+        "cn": "比例检验",
+        "jp": "比率検定"
+      },
+      {
+        "key": "sidebar_prop_p1",
+        "en": "This section supports sample size calculations for proportion-based designs: single sample, paired, two-independent, and multiple-group comparisons.",
+        "cn": "本部分用于计算基于比例的样本量，包括单样本、配对样本、双独立样本和多组比较。",
+        "jp": "このセクションでは、単一サンプル、対応サンプル、独立2サンプル、多群比較など比率を扱う研究のサンプルサイズを計算します。"
+      },
+      {
+        "key": "sidebar_prop_p2",
+        "en": "Usage: Enter parameters such as alpha, power, p0, p1, and choose the test direction. Click 'Calculate Sample Size' to proceed.",
+        "cn": "使用方法：填写显著性水平、检验功效、p0、p1等参数，并选择检验方向，点击“计算样本量”即可。",
+        "jp": "使い方：有意水準、検出力、p0、p1 などを入力し、検定方向を選択して『サンプルサイズ計算』をクリックします。"
+      },
+      {
+        "key": "sidebar_prop_p3",
+        "en": "Questions? Visit the 'About & Help' section.",
+        "cn": "如有疑问，请前往“关于和帮助”部分。",
+        "jp": "不明点は『About & Help』をご覧ください。"
+      },
+      {
+        "key": "prop_help_alpha",
+        "en": "Probability of Type I error. Common default is 0.05.",
+        "cn": "I型错误概率，通常取 0.05。",
+        "jp": "第1種過誤の確率。一般的に 0.05 が用いられます。"
+      },
+      {
+        "key": "prop_help_power",
+        "en": "Probability of correctly rejecting the null when the alternative is true.",
+        "cn": "在备择假设为真时正确拒绝零假设的概率。",
+        "jp": "対立仮説が真のときに帰無仮説を正しく棄却する確率。"
+      },
+      {
+        "key": "prop_help_p0",
+        "en": "Proportion under the null hypothesis. For example, 0.5.",
+        "cn": "零假设下的比例，例如 0.5。",
+        "jp": "帰無仮説下の比率。例：0.5。"
+      },
+      {
+        "key": "prop_help_p1",
+        "en": "Expected true proportion under the alternative hypothesis.",
+        "cn": "备择假设下的真实比例估计。",
+        "jp": "対立仮説下で想定される真の比率。"
+      },
+      {
+        "key": "prop_help_alt",
+        "en": "Choose two.sided for a bidirectional test, or less/greater for one-sided.",
+        "cn": "双侧检验选择 two.sided，单侧检验选择 less 或 greater。",
+        "jp": "双側検定は two.sided、片側検定は less または greater を選択。"
+      },
+      {
+        "key": "prop_help_paired_power",
+        "en": "Power to detect a true difference in paired proportions.",
+        "cn": "检出配对比例差异的功效。",
+        "jp": "対応比率の真の差を検出するための検出力。"
+      },
+      {
+        "key": "prop_help_paired_p1",
+        "en": "Estimated proportion in condition 1.",
+        "cn": "条件1下的估计比例。",
+        "jp": "条件1における推定比率。"
+      },
+      {
+        "key": "prop_help_paired_p2",
+        "en": "Estimated proportion in condition 2.",
+        "cn": "条件2下的估计比例。",
+        "jp": "条件2における推定比率。"
+      },
+      {
+        "key": "prop_help_two_power",
+        "en": "Desired power to detect a difference between two independent proportions.",
+        "cn": "检测两组独立比例差异所需的功效。",
+        "jp": "独立した2群の比率差を検出するための検出力。"
+      },
+      {
+        "key": "prop_help_two_p1",
+        "en": "Expected proportion in group 1.",
+        "cn": "组1的预期比例。",
+        "jp": "群1で予想される比率。"
+      },
+      {
+        "key": "prop_help_two_p2",
+        "en": "Expected proportion in group 2.",
+        "cn": "组2的预期比例。",
+        "jp": "群2で予想される比率。"
+      },
+      {
+        "key": "prop_help_two_alt",
+        "en": "Choose two.sided for general difference, or one-sided alternatives.",
+        "cn": "若检验差异则用 two.sided，若检验单侧假设则选 less/greater。",
+        "jp": "一般的な差を検定する場合は two.sided、片側検定は less/greater を選択。"
+      },
+      {
+        "key": "prop_help_multi_power",
+        "en": "Desired power for detecting a difference across multiple proportions.",
+        "cn": "检测多组比例差异所需的功效。",
+        "jp": "複数群の比率差を検出するための検出力。"
+      },
+      {
+        "key": "prop_help_multi_grp1",
+        "en": "Expected proportion for group 1.",
+        "cn": "组1的预期比例。",
+        "jp": "群1で予想される比率。"
+      },
+      {
+        "key": "prop_help_multi_grp2",
+        "en": "Expected proportion for group 2.",
+        "cn": "组2的预期比例。",
+        "jp": "群2で予想される比率。"
+      },
+      {
+        "key": "prop_help_multi_grp3",
+        "en": "Expected proportion for group 3.",
+        "cn": "组3的预期比例。",
+        "jp": "群3で予想される比率。"
+      },
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      {
+        "key": "tab_corr",
+        "en": "Correlation Tests",
+        "cn": "相关系数检验",
+        "jp": "相関検定"
+      },
+      {
+        "key": "corr_one_title",
+        "en": "Single Correlation",
+        "cn": "单相关检验",
+        "jp": "単一相関検定"
+      },
+      {
+        "key": "corr_two_title",
+        "en": "Two Correlations Comparison",
+        "cn": "两相关系数比较",
+        "jp": "2つの相関比較"
+      },
+      {
+        "key": "corr_label_alpha",
+        "en": "Significance Level (alpha)",
+        "cn": "显著性水平 (alpha)",
+        "jp": "有意水準 (α)"
+      },
+      {
+        "key": "corr_label_power",
+        "en": "Statistical Power (1 - β)",
+        "cn": "检验功效 (1 - β)",
+        "jp": "検出力 (1 - β)"
+      },
+      {
+        "key": "corr_label_r",
+        "en": "Correlation (r)",
+        "cn": "相关系数 (r)",
+        "jp": "相関係数 (r)"
+      },
+      {
+        "key": "corr_label_alt",
+        "en": "Alternative Hypothesis",
+        "cn": "备择假设",
+        "jp": "対立仮説"
+      },
+      {
+        "key": "corr_label_r1",
+        "en": "Correlation 1 (r1)",
+        "cn": "相关系数 1 (r1)",
+        "jp": "相関係数1 (r1)"
+      },
+      {
+        "key": "corr_label_r2",
+        "en": "Correlation 2 (r2)",
+        "cn": "相关系数 2 (r2)",
+        "jp": "相関係数2 (r2)"
+      },
+      {
+        "key": "corr_power_curves",
+        "en": "Power Curves",
+        "cn": "功效曲线",
+        "jp": "パワーカーブ"
+      },
+      {
+        "key": "sidebar_corr_h4",
+        "en": "Correlation Tests",
+        "cn": "相关系数检验",
+        "jp": "相関検定"
+      },
+      {
+        "key": "sidebar_corr_p1",
+        "en": "This module calculates required sample size for correlation studies, including single-correlation and comparison between two correlations.",
+        "cn": "此模块计算相关研究所需的样本量，支持单相关检验及两相关系数比较。",
+        "jp": "このモジュールでは、単一相関検定および2つの相関比較のサンプルサイズを計算します。"
+      },
+      {
+        "key": "sidebar_corr_p2",
+        "en": "Usage: Input correlation coefficients, alpha, power, and test direction. Results and power curves will be shown.",
+        "cn": "使用方法：输入相关系数、显著性水平、检验功效及检验方向即可获得结果和功效曲线。",
+        "jp": "使い方：相関係数、α、検出力、検定方向を入力すると、結果とパワーカーブが表示されます。"
+      },
+      {
+        "key": "sidebar_corr_p3",
+        "en": "Need guidance? Refer to 'About & Help'.",
+        "cn": "需要帮助？请查看“关于和帮助”。",
+        "jp": "ヘルプが必要な場合は「About & Help」をご覧ください。"
+      },
+      {
+        "key": "corr_help_alpha",
+        "en": "Probability of making a Type I error. Common default is 0.05.",
+        "cn": "发生I型错误的概率，常用默认值为 0.05。",
+        "jp": "第一種過誤の確率。一般的なデフォルトは0.05です。"
+      },
+      {
+        "key": "corr_help_power_one",
+        "en": "Probability of correctly detecting a true non-zero correlation.",
+        "cn": "正确检出真实非零相关的概率。",
+        "jp": "真の非ゼロ相関を正しく検出する確率。"
+      },
+      {
+        "key": "corr_help_r",
+        "en": "Expected Pearson correlation coefficient under the alternative hypothesis.",
+        "cn": "备择假设下预期的皮尔逊相关系数。",
+        "jp": "対立仮説下で予想されるピアソン相関係数。"
+      },
+      {
+        "key": "corr_help_alt_one",
+        "en": "Choose two.sided to test r ≠ 0, or one-sided for directional alternatives.",
+        "cn": "选择two.sided检验r ≠ 0，或选择单侧检验方向性假设。",
+        "jp": "two.sidedを選ぶとr ≠ 0を検定し、one-sidedは片側検定です。"
+      },
+      {
+        "key": "corr_help_power_two",
+        "en": "Probability of correctly detecting a difference between the two correlations.",
+        "cn": "正确检测两相关系数差异的概率。",
+        "jp": "2つの相関の差を正しく検出する確率。"
+      },
+      {
+        "key": "corr_help_r1",
+        "en": "Expected correlation coefficient in the first group.",
+        "cn": "第一组预期的相关系数。",
+        "jp": "第1群で期待される相関係数。"
+      },
+      {
+        "key": "corr_help_r2",
+        "en": "Expected correlation coefficient in the second group.",
+        "cn": "第二组预期的相关系数。",
+        "jp": "第2群で期待される相関係数。"
+      },
+      {
+        "key": "corr_help_alt_two",
+        "en": "Choose two.sided to test r1 ≠ r2, or one-sided for directional hypotheses.",
+        "cn": "选择two.sided检验r1 ≠ r2，或选择单侧检验方向假设。",
+        "jp": "two.sidedを選ぶとr1 ≠ r2を検定し、one-sidedは片側仮説の検定です。"
       }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       

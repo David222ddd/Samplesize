@@ -1033,18 +1033,18 @@ tabPanel(title = i18n$t("tab_guidance"),
 ####-###-###-###-###-###-###-###-###
 # 3. 比例检验类----
 ####-###-###-###-###-###-###-###-###
-        tabPanel("Proportion Tests",
+        tabPanel(title = i18n$t("tab_prop"), value = "Proportion Tests",
                  tabsetPanel(
                    ##===-===-===-===-===-===-===
                    ## 3.1 One-Sample Proportion Test----
                    ##===-===-===-===-===-===-===
-                   tabPanel("One-Sample Proportion Test",
+                   tabPanel(i18n$t("prop_one_title"),
                             fluidRow(
                               column(4,
                                      
                                      numericInput(
                                        inputId = "prop_one_alpha",
-                                       label = span("Significance Level (alpha)",
+                                       label = span(i18n$t("prop_label_alpha"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Probability of Type I error. Common default is 0.05.'); return false;"
                                                     )
@@ -1054,7 +1054,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      numericInput(
                                        inputId = "prop_one_power",
-                                       label = span("Statistical Power (1 - β)",
+                                       label = span(i18n$t("prop_label_power"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Probability of correctly rejecting the null when the alternative is true.'); return false;"
                                                     )
@@ -1064,7 +1064,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      numericInput(
                                        inputId = "prop_one_p0",
-                                       label = span("Null Hypothesis Proportion (p0)",
+                                       label = span(i18n$t("prop_label_p0"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Proportion under the null hypothesis. For example, 0.5.'); return false;"
                                                     )
@@ -1074,7 +1074,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      numericInput(
                                        inputId = "prop_one_p1",
-                                       label = span("Alternative Proportion (p1)",
+                                       label = span(i18n$t("prop_label_p1"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Expected true proportion under the alternative hypothesis.'); return false;"
                                                     )
@@ -1084,7 +1084,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      selectInput(
                                        inputId = "prop_one_alternative",
-                                       label = span("Alternative Hypothesis",
+                                       label = span(i18n$t("prop_label_alt"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Choose two.sided for a bidirectional test, or less/greater for one-sided.'); return false;"
                                                     )
@@ -1097,7 +1097,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      # 触发计算
                                      actionBttn(
                                        inputId = "prop_one_calc",
-                                       label = "Calculate Sample Size",
+                                       label = i18n$t("btn_calc"),
                                        style = "gradient",
                                        color = "primary"
                                      )
@@ -1106,7 +1106,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      verbatimTextOutput("prop_one_result"),
                                      tags$div(
                                        style = "border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f9f9f9; margin-top:14px;",
-                                       h4("Power Curves"),
+                                       h4(i18n$t("prop_power_curves")),
                                        plotOutput("prop_one_power_curve", height = "400px")
                                      )
                               )
@@ -1117,13 +1117,13 @@ tabPanel(title = i18n$t("tab_guidance"),
                    ##===-===-===-===-===-===-===
                    ## 3.2 Paired Proportion Comparison----
                    ##===-===-===-===-===-===-===
-                   tabPanel("Paired Proportion Comparison",
+                   tabPanel(i18n$t("prop_paired_title"),
                             fluidRow(
                               column(4,
                                      
                                      numericInput(
                                        inputId = "prop_paired_alpha",
-                                       label = span("Significance Level (alpha)",
+                                       label = span(i18n$t("prop_label_alpha"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Probability of Type I error. Often 0.05.'); return false;"
                                                     )
@@ -1133,7 +1133,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      numericInput(
                                        inputId = "prop_paired_power",
-                                       label = span("Statistical Power (1 - β)",
+                                       label = span(i18n$t("prop_label_power"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Power to detect a true difference in paired proportions.'); return false;"
                                                     )
@@ -1143,7 +1143,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      numericInput(
                                        inputId = "prop_paired_p1",
-                                       label = span("Proportion 1 (Approx.)",
+                                       label = span(i18n$t("prop_label_paired_p1"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Estimated proportion in condition 1.'); return false;"
                                                     )
@@ -1153,7 +1153,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      numericInput(
                                        inputId = "prop_paired_p2",
-                                       label = span("Proportion 2 (Approx.)",
+                                       label = span(i18n$t("prop_label_paired_p2"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Estimated proportion in condition 2.'); return false;"
                                                     )
@@ -1165,7 +1165,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      actionBttn(
                                        inputId = "prop_paired_calc",
-                                       label = "Calculate Sample Size",
+                                       label = i18n$t("btn_calc"),
                                        style = "gradient",
                                        color = "primary"
                                      )
@@ -1179,13 +1179,13 @@ tabPanel(title = i18n$t("tab_guidance"),
                    ##===-===-===-===-===-===-===
                    ## 3.3 Two-Independent Proportions Comparison----
                    ##===-===-===-===-===-===-===
-                   tabPanel("Two-Independent Proportions Comparison",
+                   tabPanel(i18n$t("prop_two_title"),
                             fluidRow(
                               column(4,
                                      
                                      numericInput(
                                        inputId = "prop_two_alpha",
-                                       label = span("Significance Level (alpha)",
+                                       label = span(i18n$t("prop_label_alpha"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Probability of Type I error. Often 0.05.'); return false;"
                                                     )
@@ -1195,7 +1195,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      numericInput(
                                        inputId = "prop_two_power",
-                                       label = span("Statistical Power (1 - β)",
+                                       label = span(i18n$t("prop_label_power"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Desired power to detect a difference between two independent proportions.'); return false;"
                                                     )
@@ -1205,7 +1205,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      numericInput(
                                        inputId = "prop_two_p1",
-                                       label = span("Proportion 1 (p1)",
+                                       label = span(i18n$t("prop_label_two_p1"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Expected proportion in group 1.'); return false;"
                                                     )
@@ -1215,7 +1215,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      numericInput(
                                        inputId = "prop_two_p2",
-                                       label = span("Proportion 2 (p2)",
+                                       label = span(i18n$t("prop_label_two_p2"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Expected proportion in group 2.'); return false;"
                                                     )
@@ -1225,7 +1225,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      selectInput(
                                        inputId = "prop_two_alternative",
-                                       label = span("Alternative Hypothesis",
+                                       label = span(i18n$t("prop_label_alt"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Choose two.sided for general difference, or one-sided alternatives.'); return false;"
                                                     )
@@ -1237,7 +1237,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      actionBttn(
                                        inputId = "prop_two_calc",
-                                       label = "Calculate Sample Size",
+                                       label = i18n$t("btn_calc"),
                                        style = "gradient",
                                        color = "primary"
                                      )
@@ -1247,7 +1247,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      verbatimTextOutput("prop_two_result"),
                                      tags$div(
                                        style = "border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f9f9f9; margin-top:14px;",
-                                       h4("Power Curves"),
+                                       h4(i18n$t("prop_power_curves")),
                                        plotOutput("prop_two_power_curve", height = "400px")
                                      )
                               )
@@ -1256,12 +1256,12 @@ tabPanel(title = i18n$t("tab_guidance"),
                    ##===-===-===-===-===-===-===
                    ## 3.4 Multiple Proportions (Completely Randomized)----
                    ##===-===-===-===-===-===-===
-                   tabPanel("Multiple Proportions (Completely Randomized)",
+                   tabPanel(i18n$t("prop_multi_title"),
                             fluidRow(
                               column(4,
                                      numericInput(
                                        inputId = "prop_multi_alpha",
-                                       label = span("Significance Level (alpha)",
+                                       label = span(i18n$t("prop_label_alpha"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Probability of Type I error. Usually set at 0.05.'); return false;"
                                                     )
@@ -1271,7 +1271,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      numericInput(
                                        inputId = "prop_multi_power",
-                                       label = span("Statistical Power (1 - β)",
+                                       label = span(i18n$t("prop_label_power"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Desired power for detecting a difference across multiple proportions.'); return false;"
                                                     )
@@ -1280,19 +1280,19 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      ),
                                      
                                      numericInput("prop_multi_grp1", span(
-                                       "Group1 proportion",
+                                       i18n$t("prop_label_multi_grp1"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected proportion for group 1.'); return false;")
                                      ), 0.2, min=0, max=1, step=0.01),
                                      
                                      numericInput("prop_multi_grp2", span(
-                                       "Group2 proportion",
+                                       i18n$t("prop_label_multi_grp2"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected proportion for group 2.'); return false;")
                                      ), 0.5, min=0, max=1, step=0.01),
                                      
                                      numericInput("prop_multi_grp3", span(
-                                       "Group3 proportion",
+                                       i18n$t("prop_label_multi_grp3"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected proportion for group 3.'); return false;")
                                      ), 0.3, min=0, max=1, step=0.01),
@@ -1300,7 +1300,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      actionBttn(
                                        inputId = "prop_multi_calc",
-                                       label   = "Calculate Sample Size",
+                                       label   = i18n$t("btn_calc"),
                                        style   = "gradient",
                                        color   = "primary"
                                      )
@@ -1309,7 +1309,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      verbatimTextOutput("prop_multi_result"),
                                      tags$div(
                                        style = "border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f9f9f9; margin-top:14px;",
-                                       h4("Power Curves"),
+                                       h4(i18n$t("prop_power_curves")),
                                        plotOutput("prop_multi_power_curve", height = "400px")
                                      )
                               )
@@ -1321,17 +1321,17 @@ tabPanel(title = i18n$t("tab_guidance"),
 ####-###-###-###-###-###-###-###-###
 # 4. 相关系数检验类----
 ####-###-###-###-###-###-###-###-###
-        tabPanel("Correlation Tests",
+tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                  tabsetPanel(
                    ##===-===-===-===-===-===-===
                    ## 4.1 Single Correlation----
                    ##===-===-===-===-===-===-===
-                   tabPanel("Single Correlation",
+                   tabPanel(i18n$t("corr_one_title"),
                             fluidRow(
                               column(4,
                                      numericInput(
                                        inputId = "corr_one_alpha",
-                                       label = span("Significance Level (alpha)",
+                                       label = span(i18n$t("corr_label_alpha"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Probability of making a Type I error. Common default is 0.05.'); return false;")
                                        ),
@@ -1340,7 +1340,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      numericInput(
                                        inputId = "corr_one_power",
-                                       label = span("Statistical Power (1 - β)",
+                                       label = span(i18n$t("corr_label_power"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Probability of correctly detecting a true non-zero correlation.'); return false;")
                                        ),
@@ -1349,7 +1349,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      numericInput(
                                        inputId = "corr_one_r",
-                                       label = span("Correlation (r)",
+                                       label = span(i18n$t("corr_label_r"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Expected Pearson correlation coefficient under the alternative hypothesis.'); return false;")
                                        ),
@@ -1358,7 +1358,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      selectInput(
                                        inputId = "corr_one_alternative",
-                                       label = span("Alternative Hypothesis",
+                                       label = span(i18n$t("corr_label_alt"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Choose two.sided to test r ≠ 0, or one-sided for directional alternatives.'); return false;")
                                        ),
@@ -1370,7 +1370,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      # 触发计算
                                      actionBttn(
                                        inputId = "corr_one_calc",
-                                       label = "Calculate Sample Size",
+                                       label = i18n$t("btn_calc"),
                                        style = "gradient",
                                        color = "primary"
                                      )
@@ -1381,7 +1381,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      tags$div(
                                        style = "border: 1px solid #ddd; padding: 10px; border-radius: 5px; 
                  background-color: #f9f9f9; margin-top:14px;",
-                                       h4("Power Curves"),
+                                       h4(i18n$t("corr_power_curves")),
                                        plotOutput("corr_one_power_curve", height = "400px")
                                      )
                               )
@@ -1392,12 +1392,12 @@ tabPanel(title = i18n$t("tab_guidance"),
                    ##===-===-===-===-===-===-===
                    ## 4.2 Two Correlations Comparison----
                    ##===-===-===-===-===-===-===
-                   tabPanel("Two Correlations Comparison",
+                   tabPanel(i18n$t("corr_two_title"),
                             fluidRow(
                               column(4,
                                      numericInput(
                                        inputId = "corr_two_alpha",
-                                       label = span("Significance Level (alpha)",
+                                       label = span(i18n$t("corr_label_alpha"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Probability of making a Type I error. Common default is 0.05.'); return false;")
                                        ),
@@ -1406,7 +1406,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      numericInput(
                                        inputId = "corr_two_power",
-                                       label = span("Statistical Power (1 - β)",
+                                       label = span(i18n$t("corr_label_power"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Probability of correctly detecting a difference between the two correlations.'); return false;")
                                        ),
@@ -1415,7 +1415,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      numericInput(
                                        inputId = "corr_two_r1",
-                                       label = span("Correlation 1 (r1)",
+                                       label = span(i18n$t("corr_label_r1"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Expected correlation coefficient in the first group.'); return false;")
                                        ),
@@ -1424,7 +1424,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      numericInput(
                                        inputId = "corr_two_r2",
-                                       label = span("Correlation 2 (r2)",
+                                       label = span(i18n$t("corr_label_r2"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Expected correlation coefficient in the second group.'); return false;")
                                        ),
@@ -1433,7 +1433,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      selectInput(
                                        inputId = "corr_two_alternative",
-                                       label = span("Alternative Hypothesis",
+                                       label = span(i18n$t("corr_label_alt"),
                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                            onclick = "alert('Choose two.sided to test r1 ≠ r2, or one-sided for directional hypotheses.'); return false;")
                                        ),
@@ -1444,7 +1444,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      
                                      actionBttn(
                                        inputId = "corr_two_calc",
-                                       label   = "Calculate Sample Size",
+                                       label   = i18n$t("btn_calc"),
                                        style   = "gradient",
                                        color   = "primary"
                                      )
@@ -1455,7 +1455,7 @@ tabPanel(title = i18n$t("tab_guidance"),
                                      tags$div(
                                        style = "border: 1px solid #ddd; padding: 10px; border-radius: 5px; 
                  background-color: #f9f9f9; margin-top:14px;",
-                                       h4("Power Curves"),
+                                       h4(i18n$t("corr_power_curves")),
                                        plotOutput("corr_two_power_curve", height = "400px")
                                      )
                               )
@@ -2447,8 +2447,8 @@ server <- function(input, output, session) {
         tags$ul(
           tags$li(i18n$t("tab_ttest")),          
           tags$li(i18n$t("tab_anova")),
-          tags$li("Proportion Tests"),
-          tags$li("Correlation Tests"),
+          tags$li(i18n$t("tab_prop")),
+          tags$li(i18n$t("tab_corr")),
           tags$li("ANOVA - Two-Factor ANOVA"),
           tags$li("Epidemiological Studies"),
           tags$li("Non-Inferiority"),
@@ -2486,17 +2486,17 @@ server <- function(input, output, session) {
       )
     } else if (input$myInnerTabs == "Proportion Tests") {
       tagList(
-        h4("Proportion Tests"),
-        tags$p("This section supports sample size calculations for proportion-based designs: single sample, paired, two-independent, and multiple-group comparisons."),
-        tags$p("Usage: Enter parameters such as alpha, power, p0, p1, and choose the test direction. Click 'Calculate Sample Size' to proceed."),
-        tags$p("Questions? Visit the 'About & Help' section.")
+        h4(i18n$t("sidebar_prop_h4")),
+        tags$p(i18n$t("sidebar_prop_p1")),
+        tags$p(i18n$t("sidebar_prop_p2")),
+        tags$p(i18n$t("sidebar_prop_p3"))
       )
     } else if (input$myInnerTabs == "Correlation Tests") {
       tagList(
-        h4("Correlation Tests"),
-        tags$p("This module calculates required sample size for correlation studies, including single-correlation and comparison between two correlations."),
-        tags$p("Usage: Input correlation coefficients, alpha, power, and test direction. Results and power curves will be shown."),
-        tags$p("Need guidance? Refer to 'About & Help'.")
+        h4(i18n$t("sidebar_corr_h4")),
+        tags$p(i18n$t("sidebar_corr_p1")),
+        tags$p(i18n$t("sidebar_corr_p2")),
+        tags$p(i18n$t("sidebar_corr_p3"))
       )
     } else if (input$myInnerTabs == "Epidemiological Studies") {
       tagList(
