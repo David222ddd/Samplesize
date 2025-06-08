@@ -926,7 +926,7 @@
         "en": "Choose two.sided to test r1 ≠ r2, or one-sided for directional hypotheses.",
         "cn": "选择two.sided检验r1 ≠ r2，或选择单侧检验方向假设。",
         "jp": "two.sidedを選ぶとr1 ≠ r2を検定し、one-sidedは片側仮説の検定です。"
-      }
+      },
 
 
 
@@ -954,6 +954,114 @@
       
       
 
+{
+  "key": "tab_epi",
+  "en": "Epidemiological Studies",
+  "cn": "流行病学研究",
+  "jp": "疫学研究"
+},
+{
+  "key": "epi_casecontrol_tab",
+  "en": "Case-Control (epiR)",
+  "cn": "病例对照研究 (epiR)",
+  "jp": "症例対照研究 (epiR)"
+},
+{
+  "key": "epi_cohort_rr_tab",
+  "en": "Cohort (RR) (epiR)",
+  "cn": "队列研究 (RR) (epiR)",
+  "jp": "コホート (RR) (epiR)"
+},
+{
+  "key": "epi_cohort_p1p2_tab",
+  "en": "Cohort (p1,p2) (epiR)",
+  "cn": "队列研究 (p1,p2) (epiR)",
+  "jp": "コホート (p1,p2) (epiR)"
+},
+{
+  "key": "epi_label_alpha",
+  "en": "Significance Level (α)",
+  "cn": "显著性水平 (α)",
+  "jp": "有意水準 (α)"
+},
+{
+  "key": "epi_label_power",
+  "en": "Power (1 - β)",
+  "cn": "检验功效 (1 - β)",
+  "jp": "検出力 (1 - β)"
+},
+{
+  "key": "epi_label_or",
+  "en": "Odds Ratio (OR)",
+  "cn": "比值比 (OR)",
+  "jp": "オッズ比 (OR)"
+},
+{
+  "key": "epi_label_p0",
+  "en": "Exposure in Controls (p0)",
+  "cn": "对照组暴露比例 (p0)",
+  "jp": "対照群曝露割合 (p0)"
+},
+{
+  "key": "epi_label_r",
+  "en": "Case:Control ratio",
+  "cn": "病例:对照 比例",
+  "jp": "症例:対照 比率"
+},
+{
+  "key": "epi_label_rr_p0",
+  "en": "Baseline Risk (p0)",
+  "cn": "基线风险 (p0)",
+  "jp": "ベースラインリスク (p0)"
+},
+{
+  "key": "epi_label_rr_val",
+  "en": "Relative Risk (RR)",
+  "cn": "相对危险度 (RR)",
+  "jp": "相対リスク (RR)"
+},
+{
+  "key": "epi_label_ratio",
+  "en": "Exposed : NonExp ratio",
+  "cn": "暴露:未暴露 比例",
+  "jp": "曝露:非曝露 比率"
+},
+{
+  "key": "epi_label_p1",
+  "en": "Incidence Risk in Exposed Group (P1)",
+  "cn": "暴露组发病风险 (P1)",
+  "jp": "曝露群の発生リスク (P1)"
+},
+{
+  "key": "epi_label_p2",
+  "en": "Incidence Risk in Non-Exposed Group (P2)",
+  "cn": "非暴露组发病风险 (P2)",
+  "jp": "非曝露群の発生リスク (P2)"
+},
+{
+  "key": "sidebar_epi_h4",
+  "en": "Epidemiological Studies",
+  "cn": "流行病学研究",
+  "jp": "疫学研究"
+},
+{
+  "key": "sidebar_epi_p1",
+  "en": "This section supports sample size calculations for case-control and cohort studies using odds ratios or relative risks.",
+  "cn": "该部分支持基于病例对照和队列研究的样本量计算，可利用比值比或相对危险度。",
+  "jp": "このセクションでは、症例対照研究やコホート研究のサンプルサイズ計算をオッズ比や相対リスクで行います。"
+},
+{
+  "key": "sidebar_epi_p2",
+  "en": "Usage: Provide alpha, power, expected effect sizes (e.g., OR or RR), baseline risks, and group ratios. Click to calculate.",
+  "cn": "使用方法：输入 alpha、power、期望效应量（如 OR 或 RR）、基线风险和组间比例，点击计算。",
+  "jp": "使い方：α、検出力、想定効果量（OR や RR）、基準リスク、群比を入力し計算をクリックします。"
+},
+{
+  "key": "sidebar_epi_p3",
+  "en": "More details are available in the 'About & Help' section.",
+  "cn": "更多详情请参见“关于和帮助”部分。",
+  "jp": "詳細は「About & Help」セクションをご覧ください。"
+}
     ]
   }
   
