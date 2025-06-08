@@ -17,7 +17,7 @@ library(ggplot2)#绘图用
 library(patchwork) #拼贴图用的
 library(slickR)#轮播图
 library(emayili)
-
+library(ellmer)#接入大语言模型
 
 
 library(shiny.i18n)
@@ -2378,6 +2378,12 @@ tabPanel(title ="About&Help",value = "About&Help",
                i18n$t("btn_submit"),
                icon = icon("paper-plane"), 
                class = "btn-primary")
+           ),
+           column(
+             width = 6,
+             textInput("ask", "提问："),
+             actionButton("go", "发送"),
+             verbatimTextOutput("ans")
            )
          ),
          br(),
@@ -2402,7 +2408,13 @@ server <- function(input, output, session) {
   
   
   
-
+#deepseek
+  chat <- chat_deepseek(model = "deepseek-chat")   # 会自动读取密钥
+  
+  observeEvent(input$go, {
+    req(input$ask)
+    output$ans <- renderText(chat$chat(input$ask)) # 同步调用
+  })
   
   
   # 当前语言
