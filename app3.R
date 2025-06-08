@@ -2138,50 +2138,50 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
 ####-###-###-###-###-###-###-###-###
 # 7. 生存分析类----
 ####-###-###-###-###-###-###-###-###
-        tabPanel("Survival Analysis",
-                 tabsetPanel(
+        tabPanel(i18n$t("tab_surv"),
+                tabsetPanel(
                    
                    
                    ##===-===-===-===-===-===-===
                    ## 7.2 Log-rank Test (TrialSize)----
                    ##===-===-===-===-===-===-===
-                   tabPanel("Log-rank Test",
-                            h3("Two-Sample Survival Equality (TrialSize)"),
+                   tabPanel(i18n$t("surv_tab_logrank"),
+                            h3(i18n$t("surv_lr_title")),
                             fluidRow(
                               column(4,
-                                     numericInput("lr_alpha", span("Significance Level (alpha):", 
+                                     numericInput("lr_alpha", span(i18n$t("surv_lr_label_alpha"),
                                                   tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                          onclick = "alert('Type I error rate for the log-rank test. Typically set at 0.05 for a two-sided test.'); return false;")
                                      ),value = 0.05, min = 0.01, max = 0.1, step = 0.01),
-                                     numericInput("lr_beta", span("Beta (1 - Power):",
+                                     numericInput("lr_beta", span(i18n$t("surv_lr_label_beta"),
                                                   tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                          onclick = "alert('Probability of failing to detect a true difference (1 - power).'); return false;")
                                      ), value = 0.2, min = 0.01, max = 0.5, step = 0.01),
-                                     numericInput("lr_lam1", span("Hazard Rate for Control Group (λ1):", 
+                                     numericInput("lr_lam1", span(i18n$t("surv_lr_label_lam1"),
                                                   tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                          onclick = "alert('Event rate (hazard) in the control group. λ = log(2)/median survival time.'); return false;")
                                      ), value = 1, min = 0, step = 0.01),
-                                     numericInput("lr_lam2", span("Hazard Rate for Treatment Group (λ2):", 
+                                     numericInput("lr_lam2", span(i18n$t("surv_lr_label_lam2"),
                                                   tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                          onclick = "alert('Event rate (hazard) in the treatment group.'); return false;")
                                      ),value = 2, min = 0, step = 0.01),
-                                     numericInput("lr_k", span("Allocation Ratio (k = n1 / n2):",
+                                     numericInput("lr_k", span(i18n$t("surv_lr_label_k"),
                                                   tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                          onclick = "alert('Ratio of sample size in treatment group to control group.'); return false;")
                                      ), value = 1, min = 0.1, max = 10, step = 0.1),
-                                     numericInput("lr_ttotal", span("Total Study Duration (T_total):", 
+                                     numericInput("lr_ttotal", span(i18n$t("surv_lr_label_ttotal"),
                                                   tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                          onclick = "alert('Total time (in years) that the study will run, including accrual and follow-up.'); return false;")
                                      ), value = 3, min = 1, step = 0.1),
-                                     numericInput("lr_taccrual", span("Accrual Duration (T_accrual):", 
+                                     numericInput("lr_taccrual", span(i18n$t("surv_lr_label_taccrual"),
                                                   tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                          onclick = "alert('Time period (in years) during which participants are recruited into the study.'); return false;")
                                      ), value = 1, min = 0.5, step = 0.1),
-                                     numericInput("lr_gamma", span("Accrual Distribution Parameter (γ):", 
+                                     numericInput("lr_gamma", span(i18n$t("surv_lr_label_gamma"),
                                                   tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                          onclick = "alert('Rate of random censoring due to dropout or loss to follow-up.'); return false;")
                                      ), value = 0.00001, min = 0, step = 0.00001),
-                                     actionButton("lr_calculate", "Calculate")
+                                     actionButton("lr_calculate", i18n$t("btn_calc"))
                               ),
                               column(8,
                                      verbatimTextOutput("lr_result"),
@@ -2193,32 +2193,32 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                    ##===-===-===-===-===-===-===
                    ## 7.3 Group Sequential (gsDesign) ----
                    ##===-===-===-===-===-===-===
-                   tabPanel("Group Sequential",
-                            h3("Group Sequential for Survival Data (gsDesign)"),
+                   tabPanel(i18n$t("surv_tab_gsd"),
+                            h3(i18n$t("surv_gsd_title")),
                             fluidRow(
                               column(4,
                                      
-                                     numericInput("gsd_alpha", span("Significance Level (α)", 
+                                     numericInput("gsd_alpha", span(i18n$t("surv_gsd_label_alpha"),
                                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                                            onclick = "alert('Overall two-sided significance level for group sequential log-rank test.'); return false;")
                                      ),value = 0.025, min = 0, max = 1),
-                                     numericInput("gsd_power", span("Power (1-β)", 
+                                     numericInput("gsd_power", span(i18n$t("surv_gsd_label_power"),
                                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                                            onclick = "alert('Probability of detecting a true hazard difference across interim analyses.'); return false;")
                                      ),value = 0.9, min = 0, max = 1),
-                                     numericInput("gsd_nlooks", span("Number of Looks (k)", 
+                                     numericInput("gsd_nlooks", span(i18n$t("surv_gsd_label_nlooks"),
                                                                      tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                                             onclick = "alert('Number of planned interim analyses, including the final look.'); return false;")
                                      ), value = 3, min = 1),
-                                     numericInput("gsd_delta", span("Standardized Effect Size (δ)", 
+                                     numericInput("gsd_delta", span(i18n$t("surv_gsd_label_delta"),
                                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                                            onclick = "alert('Effect size specified as the natural log of the hazard ratio (log(HR)).'); return false;")
                                      ), value = 0.5),
-                                     selectInput("gsd_sfu", span("Upper Bound Spending Function", 
+                                     selectInput("gsd_sfu", span(i18n$t("surv_gsd_label_sfu"),
                                                                  tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                                         onclick = "alert('Choose the method to control Type I error boundary at interim analyses.\\n\\nOF = O\\'Brien-Fleming (conservative)\\nPocock = equal boundaries\\nHSD = Hwang-Shih-DeCani family'); return false;")
                                      ),choices = c("OF", "Pocock", "HSD")),
-                                     selectInput("gsd_sfl", span("Lower Bound Spending Function", 
+                                     selectInput("gsd_sfl", span(i18n$t("surv_gsd_label_sfl"),
                                                                  tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                                         onclick = "alert('Choose method for futility bounds (stopping early for lack of efficacy).\\n\\nOF = O\\'Brien-Fleming\\nPocock = Pocock boundary\\nHSD = Hwang-Shih-DeCani'); return false;")
                                      ),choices = c("OF", "Pocock", "HSD")),
@@ -2234,27 +2234,27 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                    ##===-===-===-===-===-===-===
                    ## 7.4 Cox Proportional Hazards (TrialSize) ----
                    ##===-===-===-===-===-===-===
-                   tabPanel("Cox PH",
-                            h3("Cox Proportional Hazards Sample Size (TrialSize)"),
+                   tabPanel(i18n$t("surv_tab_cox"),
+                            h3(i18n$t("surv_cox_title")),
                             fluidRow(
                               column(4,
-                                     numericInput("cox_alpha", span("Significance Level (α)", 
+                                     numericInput("cox_alpha", span(i18n$t("surv_cox_label_alpha"),
                                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                                            onclick = "alert('Two-sided alpha for hypothesis testing in Cox regression. Typically 0.05.'); return false;")
                                      ), value = 0.05, min = 0, max = 1),
-                                     numericInput("cox_power", span("Power (1-β)", 
+                                     numericInput("cox_power", span(i18n$t("surv_cox_label_power"),
                                                                     tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                                            onclick = "alert('Probability of detecting a true hazard ratio under Cox model.'); return false;")
                                      ),value = 0.8, min = 0, max = 1),
-                                     numericInput("cox_hr", span("Hazard Ratio (HR)", 
+                                     numericInput("cox_hr", span(i18n$t("surv_cox_label_hr"),
                                                                  tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                                         onclick = "alert('Assumed true hazard ratio between two groups. HR < 1 indicates benefit.'); return false;")
                                      ),value = 1.5, min = 0),
-                                     numericInput("cox_p1", span("Proportion in Treatment Group 1", 
+                                     numericInput("cox_p1", span(i18n$t("surv_cox_label_p1"),
                                                                  tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                                         onclick = "alert('Proportion of subjects in the treatment group (group 1).'); return false;")
                                      ), value = 0.5, min = 0, max = 1),
-                                     numericInput("cox_d", span("Probability of Observing Event", 
+                                     numericInput("cox_d", span(i18n$t("surv_cox_label_d"),
                                                                 tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                                        onclick = "alert('Number of events required to detect the specified hazard ratio with given power and alpha.'); return false;")
                                      ), value = 0.8, min = 0, max = 1),
@@ -2271,48 +2271,48 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
 ####-###-###-###-###-###-###-###-###
 # 8. 诊断检验类----
 ####-###-###-###-###-###-###-###-###
-      tabPanel("Diagnostic Test",
+      tabPanel(i18n$t("tab_diag"),
          tabsetPanel(
            ##===-===-===-===-===-===-===
            ## 8.1 Diagnostic Test Sample Size----
            ##===-===-===-===-===-===-===
-           tabPanel("Diagnostic Test",
-                    h3("Diagnostic Test Sample Size (epiR)"),
+           tabPanel(i18n$t("tab_diag"),
+                    h3(i18n$t("diag_test_title")),
                     fluidRow(
                       column(4,
                              
                              numericInput("diag_test", span(
-                               "Test Performance (Sensitivity or Specificity, 0–1)",
+                               i18n$t("diag_label_test_perf"),
                                tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                       onclick = "alert('Expected value of sensitivity (Se) or specificity (Sp), depending on the parameter being estimated. Value should be between 0 and 1.'); return false;")
                              ), value = 0.9, min = 0, max = 1),
                              
                              selectInput("diag_type", span(
-                               "Parameter to Estimate",
+                               i18n$t("diag_label_type"),
                                tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                       onclick = "alert('Choose which test characteristic to estimate sample size for: Sensitivity (Se) or Specificity (Sp).'); return false;")
                              ), choices = c("Sensitivity (Se)" = "se", "Specificity (Sp)" = "sp")),
                              
                              numericInput("diag_py", span(
-                               "Prevalence (0–1)",
+                               i18n$t("diag_label_py"),
                                tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                       onclick = "alert('Expected prevalence of disease in the population. Used to determine number of diseased and non-diseased subjects.'); return false;")
                              ), value = 0.1, min = 0, max = 1),
                              
                              numericInput("diag_epsilon", span(
-                               "Margin of Error (ε)",
+                               i18n$t("diag_label_epsilon"),
                                tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                       onclick = "alert('Maximum acceptable margin of error for the estimated sensitivity or specificity.'); return false;")
                              ), value = 0.05, min = 0, max = 1),
                              
                              numericInput("diag_alpha", span(
-                               "Significance Level (α)",
+                               i18n$t("diag_label_alpha"),
                                tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                       onclick = "alert('Type I error rate for the confidence interval around Se or Sp. Typically 0.05.'); return false;")
                              ), value = 0.05, min = 0, max = 1),
                              
                              numericInput("diag_power", span(
-                               "Target Power",
+                               i18n$t("diag_label_power"),
                                tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                       onclick = "alert('Desired probability of achieving the specified margin of error for Se or Sp. Typically 0.8 or 0.9.'); return false;")
                              ), value = 0.8, min = 0, max = 1)
@@ -2466,10 +2466,10 @@ server <- function(input, output, session) {
           tags$li("Non-Inferiority"),
           tags$li("Equivalence"),
           tags$li("Superiority"),
-          tags$li("Survival Analysis - Log-rank Test"),
-          tags$li("Survival Analysis - Group Sequential"),
-          tags$li("Survival Analysis - Cox PH"),
-          tags$li("Diagnostic Test")
+          tags$li(i18n$t("home_li_surv_logrank")),
+          tags$li(i18n$t("home_li_surv_gsd")),
+          tags$li(i18n$t("home_li_surv_cox")),
+          tags$li(i18n$t("home_li_diag_test"))
         ),
         tags$p(i18n$t("sidebar_home_p3")),
         tags$p(i18n$t("sidebar_home_p4"))
@@ -2540,19 +2540,19 @@ server <- function(input, output, session) {
       )
     } else if (input$myInnerTabs == "Survival Analysis") {
       tagList(
-        h4("Survival Analysis"),
-        tags$p("Provides sample size tools for survival data: Log-rank test, Group Sequential design, Cox model, etc."),
-        tags$p("Usage: Input statistical parameters such as hazard rates, allocation ratio, accrual time, and total duration. Click to calculate."),
-        tags$p("In the Group Sequential module, the plot displays critical Z-values (normal quantiles) on the y-axis against cumulative sample size or information fraction on the x-axis."),
-        tags$p("These boundaries indicate the significance thresholds at each interim look — if your Z-statistic exceeds the upper boundary, you can reject the null hypothesis early."),
-        tags$p("Questions? Visit the 'About & Help' tab.")
+        h4(i18n$t("sidebar_surv_h4")),
+        tags$p(i18n$t("sidebar_surv_p1")),
+        tags$p(i18n$t("sidebar_surv_p2")),
+        tags$p(i18n$t("sidebar_surv_p3")),
+        tags$p(i18n$t("sidebar_surv_p4")),
+        tags$p(i18n$t("sidebar_surv_p5"))
       )
     } else if (input$myInnerTabs == "Diagnostic Test") {
       tagList(
-        h4("Diagnostic Test"),
-        tags$p("This section calculates the required sample size for evaluating diagnostic test accuracy based on sensitivity or specificity."),
-        tags$p("Usage: Choose whether you're estimating sensitivity or specificity. Enter prevalence, desired precision (margin of error), alpha, and power. Click 'Calculate Sample Size'."),
-        tags$p("To learn more or troubleshoot, please go to the 'About & Help' tab.")
+        h4(i18n$t("sidebar_diag_h4")),
+        tags$p(i18n$t("sidebar_diag_p1")),
+        tags$p(i18n$t("sidebar_diag_p2")),
+        tags$p(i18n$t("sidebar_diag_p3"))
       )
     } else if (input$myInnerTabs == "About&Help") {
       tagList(

@@ -1266,11 +1266,299 @@
    "cn": "期望均值差 (Δ)：",
    "jp": "期待平均差 (Δ):"
  },
- {
+  {
    "key": "common_label_alloc",
    "en": "Allocation ratio (n1/n2):",
    "cn": "样本量比 (n1/n2)：",
    "jp": "割付比 (n1/n2):"
- }
+  },
+  {
+   "key": "tab_surv",
+   "en": "Survival Analysis",
+   "cn": "生存分析",
+   "jp": "生存時間解析"
+  },
+  {
+   "key": "surv_tab_logrank",
+   "en": "Log-rank Test",
+   "cn": "Log-rank 检验",
+   "jp": "ログランク検定"
+  },
+  {
+   "key": "surv_tab_gsd",
+   "en": "Group Sequential",
+   "cn": "组序设计",
+   "jp": "逐次デザイン"
+  },
+  {
+   "key": "surv_tab_cox",
+   "en": "Cox PH",
+   "cn": "Cox 比例风险",
+   "jp": "Cox比例ハザード"
+  },
+  {
+   "key": "surv_lr_title",
+   "en": "Two-Sample Survival Equality (TrialSize)",
+   "cn": "双样本生存率相等检验 (TrialSize)",
+   "jp": "二標本生存率同等性検定 (TrialSize)"
+  },
+  {
+   "key": "surv_lr_label_alpha",
+   "en": "Significance Level (alpha):",
+   "cn": "显著性水平 (alpha)：",
+   "jp": "有意水準 (α)："
+  },
+  {
+   "key": "surv_lr_label_beta",
+   "en": "Beta (1 - Power):",
+   "cn": "β (1 - Power)：",
+   "jp": "β (1 - Power)："
+  },
+  {
+   "key": "surv_lr_label_lam1",
+   "en": "Hazard Rate for Control Group (λ1):",
+   "cn": "对照组危险率 (λ1)：",
+   "jp": "対照群ハザード率 (λ1)："
+  },
+  {
+   "key": "surv_lr_label_lam2",
+   "en": "Hazard Rate for Treatment Group (λ2):",
+   "cn": "治疗组危险率 (λ2)：",
+   "jp": "治療群ハザード率 (λ2)："
+  },
+  {
+   "key": "surv_lr_label_k",
+   "en": "Allocation Ratio (k = n1 / n2):",
+   "cn": "分配比例 (k = n1 / n2)：",
+   "jp": "割付比 (k = n1 / n2)："
+  },
+  {
+   "key": "surv_lr_label_ttotal",
+   "en": "Total Study Duration (T_total):",
+   "cn": "研究总时长 (T_total)：",
+   "jp": "総研究期間 (T_total)："
+  },
+  {
+   "key": "surv_lr_label_taccrual",
+   "en": "Accrual Duration (T_accrual):",
+   "cn": "入组时长 (T_accrual)：",
+   "jp": "登録期間 (T_accrual)："
+  },
+  {
+   "key": "surv_lr_label_gamma",
+   "en": "Accrual Distribution Parameter (γ):",
+   "cn": "入组分布参数 (γ)：",
+   "jp": "登録分布パラメータ (γ)："
+  },
+  {
+   "key": "surv_gsd_title",
+   "en": "Group Sequential for Survival Data (gsDesign)",
+   "cn": "生存数据组序设计 (gsDesign)",
+   "jp": "生存データ逐次デザイン (gsDesign)"
+  },
+  {
+   "key": "surv_gsd_label_alpha",
+   "en": "Significance Level (α)",
+   "cn": "显著性水平 (α)",
+   "jp": "有意水準 (α)"
+  },
+  {
+   "key": "surv_gsd_label_power",
+   "en": "Power (1-β)",
+   "cn": "检验功效 (1-β)",
+   "jp": "検出力 (1-β)"
+  },
+  {
+   "key": "surv_gsd_label_nlooks",
+   "en": "Number of Looks (k)",
+   "cn": "中期分析次数 (k)",
+   "jp": "中間解析回数 (k)"
+  },
+  {
+   "key": "surv_gsd_label_delta",
+   "en": "Standardized Effect Size (δ)",
+   "cn": "标准化效应大小 (δ)",
+   "jp": "標準化効果量 (δ)"
+  },
+  {
+   "key": "surv_gsd_label_sfu",
+   "en": "Upper Bound Spending Function",
+   "cn": "上界花费函数",
+   "jp": "上限スぺンディング関数"
+  },
+  {
+   "key": "surv_gsd_label_sfl",
+   "en": "Lower Bound Spending Function",
+   "cn": "下界花费函数",
+   "jp": "下限スぺンディング関数"
+  },
+  {
+   "key": "surv_cox_title",
+   "en": "Cox Proportional Hazards Sample Size (TrialSize)",
+   "cn": "Cox比例风险样本量 (TrialSize)",
+   "jp": "Cox比例ハザードサンプルサイズ (TrialSize)"
+  },
+  {
+   "key": "surv_cox_label_alpha",
+   "en": "Significance Level (α)",
+   "cn": "显著性水平 (α)",
+   "jp": "有意水準 (α)"
+  },
+  {
+   "key": "surv_cox_label_power",
+   "en": "Power (1-β)",
+   "cn": "检验功效 (1-β)",
+   "jp": "検出力 (1-β)"
+  },
+  {
+   "key": "surv_cox_label_hr",
+   "en": "Hazard Ratio (HR)",
+   "cn": "风险比 (HR)",
+   "jp": "ハザード比 (HR)"
+  },
+  {
+   "key": "surv_cox_label_p1",
+   "en": "Proportion in Treatment Group 1",
+   "cn": "治疗组1比例",
+   "jp": "治療群1の割合"
+  },
+  {
+   "key": "surv_cox_label_d",
+   "en": "Probability of Observing Event",
+   "cn": "观察事件的概率",
+   "jp": "イベント観察確率"
+  },
+  {
+   "key": "tab_diag",
+   "en": "Diagnostic Test",
+   "cn": "诊断检验",
+   "jp": "診断テスト"
+  },
+  {
+   "key": "diag_test_title",
+   "en": "Diagnostic Test Sample Size (epiR)",
+   "cn": "诊断检验样本量 (epiR)",
+   "jp": "診断テストサンプルサイズ (epiR)"
+  },
+  {
+   "key": "diag_label_test_perf",
+   "en": "Test Performance (Sensitivity or Specificity, 0–1)",
+   "cn": "检验性能（灵敏度或特异度，0-1）",
+   "jp": "検査性能（感度または特異度，0〜1）"
+  },
+  {
+   "key": "diag_label_type",
+   "en": "Parameter to Estimate",
+   "cn": "估计参数",
+   "jp": "推定する指標"
+  },
+  {
+   "key": "diag_label_py",
+   "en": "Prevalence (0–1)",
+   "cn": "患病率 (0-1)",
+   "jp": "有病率 (0〜1)"
+  },
+  {
+   "key": "diag_label_epsilon",
+   "en": "Margin of Error (ε)",
+   "cn": "误差容限 (ε)",
+   "jp": "許容誤差 (ε)"
+  },
+  {
+   "key": "diag_label_alpha",
+   "en": "Significance Level (α)",
+   "cn": "显著性水平 (α)",
+   "jp": "有意水準 (α)"
+  },
+  {
+   "key": "diag_label_power",
+   "en": "Target Power",
+   "cn": "目标功效",
+   "jp": "目標検出力"
+  },
+  {
+   "key": "sidebar_surv_h4",
+   "en": "Survival Analysis",
+   "cn": "生存分析",
+   "jp": "生存時間解析"
+  },
+  {
+   "key": "sidebar_surv_p1",
+   "en": "Provides sample size tools for survival data: Log-rank test, Group Sequential design, Cox model, etc.",
+   "cn": "本模块提供生存资料的样本量工具，包含Log-rank检验、组序设计、Cox模型等。",
+   "jp": "このモジュールでは、ログランク検定、逐次デザイン、Coxモデルなど、生存データのサンプルサイズ計算を行います。"
+  },
+  {
+   "key": "sidebar_surv_p2",
+   "en": "Usage: Input statistical parameters such as hazard rates, allocation ratio, accrual time, and total duration. Click to calculate.",
+   "cn": "使用方法：输入危险率、分配比、入组时间及研究总时间等统计参数后点击计算。",
+   "jp": "使い方：ハザード率、割付比、登録期間、総期間などの統計量を入力して計算します。"
+  },
+  {
+   "key": "sidebar_surv_p3",
+   "en": "In the Group Sequential module, the plot displays critical Z-values (normal quantiles) on the y-axis against cumulative sample size or information fraction on the x-axis.",
+   "cn": "在组序模块中，图中纵轴为关键Z值，横轴为累计样本量或信息比例。",
+   "jp": "逐次解析モジュールでは、縦軸に臨界Z値（正規分位数）、横軸に累積サンプルサイズまたは情報比を表示します。"
+  },
+  {
+   "key": "sidebar_surv_p4",
+   "en": "These boundaries indicate the significance thresholds at each interim look — if your Z-statistic exceeds the upper boundary, you can reject the null hypothesis early.",
+   "cn": "这些界值指示各中期分析的显著性阈值—若统计量超过上界即可提前拒绝零假设。",
+   "jp": "これらの境界は各中間解析の有意水準を示します。Z統計が上限を超えれば早期に帰無仮説を棄却できます。"
+  },
+  {
+   "key": "sidebar_surv_p5",
+   "en": "Questions? Visit the 'About & Help' tab.",
+   "cn": "如有疑问，请查看‘关于和帮助’标签。",
+   "jp": "不明点は「About & Help」タブをご覧ください。"
+  },
+  {
+   "key": "sidebar_diag_h4",
+   "en": "Diagnostic Test",
+   "cn": "诊断检验",
+   "jp": "診断テスト"
+  },
+  {
+   "key": "sidebar_diag_p1",
+   "en": "This section calculates the required sample size for evaluating diagnostic test accuracy based on sensitivity or specificity.",
+   "cn": "该部分根据灵敏度或特异度计算评估诊断试验准确性的所需样本量。",
+   "jp": "このセクションでは感度または特異度に基づき診断テストの精度評価に必要なサンプルサイズを算出します。"
+  },
+  {
+   "key": "sidebar_diag_p2",
+   "en": "Usage: Choose whether you're estimating sensitivity or specificity. Enter prevalence, desired precision (margin of error), alpha, and power. Click 'Calculate Sample Size'.",
+   "cn": "使用方法：选择要估计敏感度还是特异度，输入患病率、允许误差、α和功效后点击‘计算样本量’。",
+   "jp": "使い方：感度か特異度を選択し、有病率、許容誤差、α、検出力を入力して『サンプルサイズ計算』をクリックします。"
+  },
+  {
+   "key": "sidebar_diag_p3",
+   "en": "To learn more or troubleshoot, please go to the 'About & Help' tab.",
+   "cn": "了解更多或排除故障，请访问‘关于和帮助’。",
+   "jp": "詳細やトラブルシュートは「About & Help」タブへ。"
+  },
+  {
+   "key": "home_li_surv_logrank",
+   "en": "Survival Analysis - Log-rank Test",
+   "cn": "生存分析 - Log-rank检验",
+   "jp": "生存解析 - ログランク検定"
+  },
+  {
+   "key": "home_li_surv_gsd",
+   "en": "Survival Analysis - Group Sequential",
+   "cn": "生存分析 - 组序设计",
+   "jp": "生存解析 - 逐次デザイン"
+  },
+  {
+   "key": "home_li_surv_cox",
+   "en": "Survival Analysis - Cox PH",
+   "cn": "生存分析 - Cox PH",
+   "jp": "生存解析 - Cox PH"
+  },
+  {
+   "key": "home_li_diag_test",
+   "en": "Diagnostic Test",
+   "cn": "诊断检验",
+   "jp": "診断テスト"
+  }
 ]
 }
