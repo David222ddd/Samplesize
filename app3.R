@@ -1661,54 +1661,54 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
         ##  6.1 (A) Non-Inferiority - UI----
         ##===-===-===-===-===-===-===
         
-        tabPanel("Non-Inferiority",
+        tabPanel(title = i18n$t("tab_ni"), value = "Non-Inferiority",
                  
                  tabsetPanel(
                    ###────────────────────────────────────
                    ### A.1 Two Means (Difference) ----
                    ###────────────────────────────────────
-                   tabPanel("Two Means (Difference)",
+                   tabPanel(i18n$t("tab_means_diff"),
                             fluidRow(
                               column(4,
                                      numericInput("ni_means_alpha", span(
-                                       "Significance Level α (One side):",
+                                       i18n$t("ni_label_alpha"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('One-sided significance level used for hypothesis testing. Typical value is 0.025 for non-inferiority trials.'); return false;")
                                      ), value=0.025, min=0, max=0.1, step=0.001),
                                      
                                      numericInput("ni_means_power", span(
-                                       "Power (1-β):",
+                                       i18n$t("ttest_label_power"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Desired power of the test, i.e., probability of correctly detecting non-inferiority if it exists.'); return false;")
                                      ), value=0.80, min=0, max=1, step=0.01),
                                      
                                      numericInput("ni_means_sigma", span(
-                                       "Pooled Std Dev (σ):",
+                                       i18n$t("ni_label_sigma"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Pooled standard deviation used to estimate variability when calculating sample size.'); return false;")
                                      ), value=1.5, min=0.0001),
                                      
                                      numericInput("ni_means_ratio", span(
-                                       "Allocation ratio (n1/n2):",
+                                       i18n$t("common_label_alloc"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Ratio of sample size in treatment group (n1) to control group (n2). Usually set to 1 for equal allocation.'); return false;")
                                      ), value=1),
                                      
                                      numericInput("ni_means_margin", span(
-                                       "NI Margin (delta):",
+                                       i18n$t("ni_label_margin"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Non-inferiority margin — the smallest clinically acceptable difference where new treatment is still considered non-inferior.'); return false;")
                                      ), value=0.5),
                                      
                                      numericInput("ni_means_diff", span(
-                                       "True difference (μ2 - μ1):",
+                                       i18n$t("ni_label_true_diff"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Assumed true difference in means between control (μ2) and treatment (μ1). Often assumed to be 0.'); return false;")
                                      ), value=0),
                                      
                                      
                                      
-                                     actionButton("ni_means_calc", "Calculate")
+                                     actionButton("ni_means_calc", i18n$t("btn_calc"))
                               ),
                               column(8,
                                      verbatimTextOutput("ni_means_result"),
@@ -1719,7 +1719,7 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                    ###────────────────────────────────────
                    ### A.2 Two Proportions (Difference) -----
                    ###────────────────────────────────────
-                   tabPanel("Two Proportions (Difference)",
+                   tabPanel(i18n$t("tab_prop_diff"),
                             fluidRow(
                               column(4,
                                      numericInput("ni_prop_alpha", span(
@@ -1729,37 +1729,37 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                                      ), 0.025),
                                      
                                      numericInput("ni_prop_power", span(
-                                       "Power (1-β):",
+                                       i18n$t("ttest_label_power"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Probability of correctly concluding non-inferiority if it truly exists.'); return false;")
                                      ), 0.80),
                                      
                                      numericInput("ni_prop_p1", span(
-                                       "p1 (Treatment):",
+                                       i18n$t("ni_label_p1"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected event proportion in the treatment group.'); return false;")
                                      ), 0.50),
                                      
                                      numericInput("ni_prop_p2", span(
-                                       "p2 (Control):",
+                                       i18n$t("ni_label_p2"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected event proportion in the control group.'); return false;")
                                      ), 0.40),
                                      
                                      numericInput("ni_prop_margin", span(
-                                       "NI Margin (Δ):",
+                                       i18n$t("ni_label_margin"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Non-inferiority margin — maximum acceptable difference (p1 - p2) where treatment is still non-inferior.'); return false;")
                                      ), 0.10),
                                      
                                      numericInput("ni_prop_ratio", span(
-                                       "Allocation ratio (n1/n2):",
+                                       i18n$t("common_label_alloc"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Ratio of sample size between treatment and control groups.'); return false;")
                                      ), 1)
                                      ,
                                      
-                                     actionButton("ni_prop_calc", "Calculate")
+                                     actionButton("ni_prop_calc", i18n$t("btn_calc"))
                               ),
                               column(8,
                                      verbatimTextOutput("ni_prop_result"),
@@ -1770,7 +1770,7 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                    ###────────────────────────────────────
                    ### A.3 Two Proportions (Ratio) ----
                    ###────────────────────────────────────
-                   tabPanel("Two Proportions (Ratio)",
+                   tabPanel(i18n$t("tab_prop_ratio"),
                             fluidRow(
                               column(4,
                                      numericInput("ni_ratio_alpha", span(
@@ -1780,37 +1780,37 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                                      ), 0.025),
                                      
                                      numericInput("ni_ratio_power", span(
-                                       "Power (1-β):",
+                                       i18n$t("ttest_label_power"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Desired statistical power for detecting non-inferiority based on risk ratio.'); return false;")
                                      ), 0.80),
                                      
                                      numericInput("ni_ratio_p1", span(
-                                       "p1 (Treatment):",
+                                       i18n$t("ni_label_p1"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected event rate in the treatment group.'); return false;")
                                      ), 0.50),
                                      
                                      numericInput("ni_ratio_p2", span(
-                                       "p2 (Control):",
+                                       i18n$t("ni_label_p2"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected event rate in the control group.'); return false;")
                                      ), 0.40),
                                      
                                      numericInput("ni_ratio_rmargin", span(
-                                       "NI Margin (RR Upper):",
+                                       i18n$t("ni_label_margin_rr"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Non-inferiority margin for risk ratio — usually an upper bound like 1.25.'); return false;")
                                      ), 1.25),
                                      
                                      numericInput("ni_ratio_alloc", span(
-                                       "Allocation ratio (n1/n2):",
+                                       i18n$t("common_label_alloc"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Ratio of sample sizes between the two groups (treatment/control).'); return false;")
                                      ), 1)
                                      ,
                                      
-                                     actionButton("ni_ratio_calc", "Calculate")
+                                     actionButton("ni_ratio_calc", i18n$t("btn_calc"))
                               ),
                               column(8,
                                      verbatimTextOutput("ni_ratio_result"),
@@ -1823,53 +1823,53 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
         ##===-===-===-===-===-===-===
         ## 6.2 (B) Equivalence -UI ----
         ##===-===-===-===-===-===-===
-        tabPanel("Equivalence",
+        tabPanel(title = i18n$t("tab_equiv"), value = "Equivalence",
                  
                  tabsetPanel(
                    ###────────────────────────────────────
                    ### B.1 Two Means (Difference) ----
                    ###────────────────────────────────────
-                   tabPanel("Two Means (Difference)",
+                   tabPanel(i18n$t("tab_means_diff"),
                             fluidRow(
                               column(4,
                                      numericInput("eq_means_alpha", span(
-                                       "Significance Level α (One side):",
+                                       i18n$t("ni_label_alpha"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('One-sided significance level used in equivalence testing. Typically set at 0.05.'); return false;")
                                      ), 0.05),
                                      
                                      numericInput("eq_means_power", span(
-                                       "Power (1-β):",
+                                       i18n$t("ttest_label_power"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Statistical power to correctly conclude equivalence when it exists.'); return false;")
                                      ), 0.80),
                                      
                                      numericInput("eq_means_sigma", span(
-                                       "Pooled StdDev (σ):",
+                                       i18n$t("ni_label_sigma"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Estimated pooled standard deviation of the two groups. Used in sample size calculation.'); return false;")
                                      ), 1.5),
                                      
                                      numericInput("eq_means_ratio", span(
-                                       "Allocation ratio (n1/n2):",
+                                       i18n$t("common_label_alloc"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Ratio of sample sizes in group 1 to group 2. Set to 1 for equal allocation.'); return false;")
                                      ), 1),
                                      
                                      numericInput("eq_means_delta", span(
-                                       "Equiv. Margin (delta):",
+                                       i18n$t("eq_label_margin"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Equivalence margin — the maximum allowed difference in means for considering the treatments equivalent.'); return false;")
                                      ), 0.5),
                                      
                                      numericInput("eq_means_margin", span(
-                                       "True mean diff (μ2 - μ1):",
+                                       i18n$t("eq_label_true_diff"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Assumed true difference in means between the two groups. Often assumed to be 0.'); return false;")
                                      ), 0)
                                      ,
                                      
-                                     actionButton("eq_means_calc",   "Calculate")
+                                     actionButton("eq_means_calc",   i18n$t("btn_calc"))
                               ),
                               column(8,
                                      verbatimTextOutput("eq_means_result"),
@@ -1880,7 +1880,7 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                    ###────────────────────────────────────
                    ### B.2 Two Proportions (Difference) ----
                    ###────────────────────────────────────
-                   tabPanel("Two Proportions (Difference)",
+                   tabPanel(i18n$t("tab_prop_diff"),
                             fluidRow(
                               column(4,
                                      numericInput("eq_prop_alpha", span(
@@ -1890,43 +1890,43 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                                      ), 0.05),
                                      
                                      numericInput("eq_prop_power", span(
-                                       "Power (1-β):",
+                                       i18n$t("ttest_label_power"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Statistical power to detect equivalence in two proportions.'); return false;")
                                      ), 0.80),
                                      
                                      numericInput("eq_prop_p1", span(
-                                       "p1 (Test):",
+                                       i18n$t("eq_label_p1"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected event proportion in the test group.'); return false;")
                                      ), 0.50),
                                      
                                      numericInput("eq_prop_p2", span(
-                                       "p2 (Control):",
+                                       i18n$t("eq_label_p2"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected event proportion in the control group.'); return false;")
                                      ), 0.40),
                                      
                                      numericInput("eq_prop_ratio", span(
-                                       "Allocation ratio (n1/n2):",
+                                       i18n$t("common_label_alloc"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Ratio of sample sizes between test and control groups.'); return false;")
                                      ), 1),
                                      
                                      numericInput("eq_prop_delta", span(
-                                       "Equiv. Margin (delta):",
+                                       i18n$t("eq_label_margin"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Maximum acceptable absolute difference in proportions to declare equivalence.'); return false;")
                                      ), 0.1),
                                      
                                      numericInput("eq_prop_margin", span(
-                                       "Non-inf/sup margin:",
+                                       i18n$t("eq_label_noninf_sup_margin"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Optional margin used for additional tests of non-inferiority or superiority, if applicable.'); return false;")
                                      ), 0.15)
                                      ,
                                      
-                                     actionButton("eq_prop_calc",   "Calculate")
+                                     actionButton("eq_prop_calc",   i18n$t("btn_calc"))
                               ),
                               column(8,
                                      verbatimTextOutput("eq_prop_result"),
@@ -1937,7 +1937,7 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                    ###────────────────────────────────────
                    ### B.3 Two Proportions (Ratio) ----
                    ###────────────────────────────────────
-                   tabPanel("Two Proportions (Ratio)",
+                   tabPanel(i18n$t("tab_prop_ratio"),
                             fluidRow(
                               column(4,
                                      numericInput("eq_ratio_alpha", span(
@@ -1947,37 +1947,37 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                                      ), 0.05),
                                      
                                      numericInput("eq_ratio_power", span(
-                                       "Power (1-β):",
+                                       i18n$t("ttest_label_power"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Power to correctly detect equivalence based on a risk ratio.'); return false;")
                                      ), 0.80),
                                      
                                      numericInput("eq_ratio_pt", span(
-                                       "pt (Test):",
+                                       i18n$t("eq_label_pt"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected proportion of events in the test group.'); return false;")
                                      ), 0.50),
                                      
                                      numericInput("eq_ratio_pc", span(
-                                       "pc (Control):",
+                                       i18n$t("eq_label_pc"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected proportion of events in the control group.'); return false;")
                                      ), 0.40),
                                      
                                      numericInput("eq_ratio_alloc", span(
-                                       "Allocation ratio (nT/nC):",
+                                       i18n$t("common_label_alloc"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Ratio of sample sizes between test and control groups.'); return false;")
                                      ), 1),
                                      
                                      numericInput("eq_ratio_margin", span(
-                                       "Equiv. Margin:",
+                                       i18n$t("eq_label_margin_ratio"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Equivalence margin in terms of allowable ratio (e.g., 1.25 means equivalence if RR is within [1/1.25, 1.25]).'); return false;")
                                      ), 1.25)
                                      ,
                                      
-                                     actionButton("eq_ratio_calc",   "Calculate")
+                                     actionButton("eq_ratio_calc",   i18n$t("btn_calc"))
                               ),
                               column(8,
                                      verbatimTextOutput("eq_ratio_result"),
@@ -1990,13 +1990,13 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
         ##===-===-===-===-===-===-===
         ## 6.3 (C) Superiority (Equality) -UI ----
         ##===-===-===-===-===-===-===
-        tabPanel("Superiority",
+        tabPanel(title = i18n$t("tab_sup"), value = "Superiority",
                  
                  tabsetPanel(
                    ###────────────────────────────────────
                    ### C.1 Two Means (Difference) ----
                    ###────────────────────────────────────
-                   tabPanel("Two Means (Difference)",
+                   tabPanel(i18n$t("tab_means_diff"),
                             fluidRow(
                               column(4,
                                      numericInput("sup_means_alpha", span(
@@ -2006,31 +2006,31 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                                      ), value = 0.05),
                                      
                                      numericInput("sup_means_power", span(
-                                       "Power (1-β):",
+                                       i18n$t("ttest_label_power"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Desired probability of correctly detecting a true difference in means.'); return false;")
                                      ), value = 0.80),
                                      
                                      numericInput("sup_means_sigma", span(
-                                       "Pooled Std Dev (σ):",
+                                       i18n$t("ni_label_sigma"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Estimated pooled standard deviation across groups. Used in sample size calculation.'); return false;")
                                      ), value = 1.5),
                                      
                                      numericInput("sup_means_ratio", span(
-                                       "Allocation ratio (n1/n2):",
+                                       i18n$t("common_label_alloc"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Ratio of sample sizes between treatment group (n1) and control group (n2).'); return false;")
                                      ), value = 1),
                                      
                                      numericInput("sup_means_margin", span(
-                                       "Expected Mean Difference (Δ):",
+                                       i18n$t("sup_label_mean_diff"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Assumed true difference in means under the alternative hypothesis (e.g., μ1 - μ2).'); return false;")
                                      ), value = 0.5)
                                      ,
                                      
-                                     actionButton("sup_means_calc",   "Calculate")
+                                     actionButton("sup_means_calc",   i18n$t("btn_calc"))
                               ),
                               column(8,
                                      verbatimTextOutput("sup_means_result"),
@@ -2041,7 +2041,7 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                    ###────────────────────────────────────
                    ### C.2 Two Proportions (Difference) ----
                    ###────────────────────────────────────
-                   tabPanel("Two Proportions (Difference)",
+                     tabPanel(i18n$t("tab_prop_diff"),
                             fluidRow(
                               column(4,
                                      numericInput("sup_prop_alpha", span(
@@ -2051,31 +2051,31 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                                      ), value = 0.05),
                                      
                                      numericInput("sup_prop_power", span(
-                                       "Power (1-β):",
+                                       i18n$t("ttest_label_power"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Probability of detecting a true difference in proportions.'); return false;")
                                      ), value = 0.80),
                                      
                                      numericInput("sup_prop_p1", span(
-                                       "p1 (Treatment):",
+                                       i18n$t("ni_label_p1"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected proportion of success or event in the treatment group.'); return false;")
                                      ), value = 0.5),
                                      
                                      numericInput("sup_prop_p2", span(
-                                       "p2 (Control):",
+                                       i18n$t("ni_label_p2"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected proportion of success or event in the control group.'); return false;")
                                      ), value = 0.4),
                                      
                                      numericInput("sup_prop_ratio", span(
-                                       "Allocation ratio (n1/n2):",
+                                       i18n$t("common_label_alloc"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Sample size ratio between treatment and control groups.'); return false;")
                                      ), value = 1)
                                      ,
                                      
-                                     actionButton("sup_prop_calc",   "Calculate")
+                                     actionButton("sup_prop_calc",   i18n$t("btn_calc"))
                               ),
                               column(8,
                                      verbatimTextOutput("sup_prop_result"),
@@ -2086,7 +2086,7 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                    ###────────────────────────────────────
                    ### C.3 Two Proportions (Ratio) ----
                    ###────────────────────────────────────
-                   tabPanel("Two Proportions (Ratio)",
+                   tabPanel(i18n$t("tab_prop_ratio"),
                             fluidRow(
                               column(4,
                                      numericInput("sup_ratio_alpha", span(
@@ -2096,31 +2096,31 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                                      ), value = 0.05),
                                      
                                      numericInput("sup_ratio_power", span(
-                                       "Power (1-β):",
+                                       i18n$t("ttest_label_power"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Desired probability to detect a difference in risk ratios.'); return false;")
                                      ), value = 0.80),
                                      
                                      numericInput("sup_ratio_pt", span(
-                                       "pt (Treatment):",
+                                       i18n$t("eq_label_pt"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected event proportion in the treatment group.'); return false;")
                                      ), value = 0.5),
                                      
                                      numericInput("sup_ratio_pc", span(
-                                       "pc (Control):",
+                                       i18n$t("eq_label_pc"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Expected event proportion in the control group.'); return false;")
                                      ), value = 0.4),
                                      
                                      numericInput("sup_ratio_alloc", span(
-                                       "Allocation ratio (n1/n2):",
+                                       i18n$t("common_label_alloc"),
                                        tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                               onclick = "alert('Sample size ratio between treatment and control groups.'); return false;")
                                      ), value = 1)
                                      ,
                                      
-                                     actionButton("sup_ratio_calc",  "Calculate")
+                                     actionButton("sup_ratio_calc",  i18n$t("btn_calc"))
                               ),
                               column(8,
                                      verbatimTextOutput("sup_ratio_result"),
@@ -2222,7 +2222,7 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                                                                  tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                                         onclick = "alert('Choose method for futility bounds (stopping early for lack of efficacy).\\n\\nOF = O\\'Brien-Fleming\\nPocock = Pocock boundary\\nHSD = Hwang-Shih-DeCani'); return false;")
                                      ),choices = c("OF", "Pocock", "HSD")),
-                                     actionButton("gsd_calc", "Calculate")
+                                     actionButton("gsd_calc", i18n("btn_calc"))
                               ),
                               column(8,
                                      verbatimTextOutput("gsd_result"),
@@ -2258,7 +2258,7 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                                                                 tags$a(tags$i(class = "fa fa-question-circle"), href = "#",
                                                                        onclick = "alert('Number of events required to detect the specified hazard ratio with given power and alpha.'); return false;")
                                      ), value = 0.8, min = 0, max = 1),
-                                     actionButton("cox_calc", "Calculate")
+                                     actionButton("cox_calc", i18n("btn_calc"))
                               ),
                               column(8,
                                      verbatimTextOutput("cox_result"),
@@ -2317,7 +2317,7 @@ tabPanel(title = i18n$t("tab_corr"), value = "Correlation Tests",
                                       onclick = "alert('Desired probability of achieving the specified margin of error for Se or Sp. Typically 0.8 or 0.9.'); return false;")
                              ), value = 0.8, min = 0, max = 1)
                              ,
-                             actionButton("diag_calc", "Calculate")
+                             actionButton("diag_calc", i18n("btn_calc"))
                       ),
                       column(8,
                              verbatimTextOutput("diag_result"),
@@ -2519,24 +2519,24 @@ server <- function(input, output, session) {
       )
     } else if (input$myInnerTabs == "Non-Inferiority") {
       tagList(
-        h4("Non-Inferiority"),
-        tags$p("This module supports sample size estimation for non-inferiority trials (mean or proportion differences or ratios)."),
-        tags$p("Usage: Set significance level, power, margin of non-inferiority, effect estimates, and allocation ratio. Click 'Calculate'."),
-        tags$p("Need help? Go to 'About & Help'.")
+        h4(i18n$t("sidebar_ni_h4")),
+        tags$p(i18n$t("sidebar_ni_p1")),
+        tags$p(i18n$t("sidebar_ni_p2")),
+        tags$p(i18n$t("sidebar_ni_p3"))
       )
     } else if (input$myInnerTabs == "Equivalence") {
       tagList(
-        h4("Equivalence"),
-        tags$p("Estimate sample size for equivalence studies using mean differences or proportion comparisons."),
-        tags$p("Usage: Input alpha, power, equivalence margin, and effect size, then click 'Calculate'."),
-        tags$p("Visit 'About & Help' for guidance.")
+        h4(i18n$t("sidebar_eq_h4")),
+        tags$p(i18n$t("sidebar_eq_p1")),
+        tags$p(i18n$t("sidebar_eq_p2")),
+        tags$p(i18n$t("sidebar_eq_p3"))
       )
     } else if (input$myInnerTabs == "Superiority") {
       tagList(
-        h4("Superiority"),
-        tags$p("Used to calculate sample size for superiority trials (difference or ratio between two means or proportions)."),
-        tags$p("Usage: Fill in values for alpha, power, effect size, and group ratio. Then click 'Calculate'."),
-        tags$p("Need help? Check the 'About & Help' tab.")
+        h4(i18n$t("sidebar_sup_h4")),
+        tags$p(i18n$t("sidebar_sup_p1")),
+        tags$p(i18n$t("sidebar_sup_p2")),
+        tags$p(i18n$t("sidebar_sup_p3"))
       )
     } else if (input$myInnerTabs == "Survival Analysis") {
       tagList(
